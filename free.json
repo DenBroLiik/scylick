@@ -1,0 +1,20 @@
+const roulette = document.querySelector('.roulette ul');
+const spinButton = document.querySelector('.spin-button');
+let isSpinning = false;
+
+spinButton.addEventListener('click', () => {
+  if (!isSpinning) {
+    isSpinning = true;
+    const randomIndex = Math.floor(Math.random() * 10);
+    const itemWidth = 10;
+    const targetPosition = -randomIndex * itemWidth;
+    roulette.style.transition = 'transform 3s ease-out';
+    roulette.style.transform = `translateX(${targetPosition}%)`;
+    setTimeout(() => {
+      isSpinning = false;
+      roulette.style.transition = 'none';
+      roulette.style.transform = 'translateX(0)';
+      alert(`Congratulations! You won bonus ${randomIndex + 1}`);
+    }, 3000);
+  }
+});

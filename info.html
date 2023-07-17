@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+ <title>ScyLick.ru</title>
+  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
+ <html lang="ru"></html>
+  <meta charset="UTF-8">
+ <style>
+  /* CSS-����� ��� ������ ����� */
+  title {
+    color: #ff0000;
+    background-color: #b72a2a;
+  }
+  body {   
+    /* background: url(/scylick/images/2020-01-24-21.webp); */
+    background-repeat: repeat;
+		background-size: cover;
+   background-color: #f3f3f3;
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+  }
+  header {
+   padding: 20px;
+   text-align: center;
+   display: flex;
+   justify-content: space-between; 
+  }
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  nav ul {
+    width: 9999px;
+    height: 80px;
+    background-color: #ff000034;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 10px;
+   display: flex;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+  }
+  nav li {
+   margin: 0 10px;
+  }
+  nav a {
+   color: #ae00ff;
+   background-color: #b700ff1f;
+   text-decoration: none;
+   text-transform: uppercase;
+  }
+  nav a:hover {
+   color: #5a327a;
+  }
+  main {
+   margin: 20px;
+  }
+  footer {
+    background-color: #ff0022b2;
+   color: #1f3a00;
+   padding: 5px;
+   text-align: center;
+  }
+  header {
+    display: flex;
+    flex-flow: row;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 5.5px;
+    justify-content: center;
+    background: rgba(255, 0, 21, 0);
+    border-radius: 5px;
+    color: #332e2e;
+    filter: drop-shadow(-21px -10px 9px rgba(255, 0, 21, 0.03)) drop-shadow(-12px -6px 8px rgba(255, 0, 21, 0.1)) drop-shadow(-5px -2px 6px rgba(255,34,51,.17)) drop-shadow(-1px -1px 3px rgba(255,34,51,.2)) drop-shadow(0 0 0 rgba(255,34,51,.2));
+  }
+  .center {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;  
+  height: auto;
+  }
+
+  .footer {
+
+    color: #ffffff;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-weight: bold;
+    font-size: 24px;
+    opacity: 0.8;
+  }
+  .footer:before {
+    content: "{";
+    display: inline-block;
+    animation: pulse 0.4s alternate infinite ease-in-out;
+  }
+  .footer:after {
+    content: "}";
+    display: inline-block;
+    animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    to {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+  }
+
+  nav {
+    margin: 0;
+			padding: 0;
+			background-color: #f2f2f200;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		.button {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 20px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 2px solid #ff0000af;
+			border-radius: 5px;
+			padding: 10px;
+			font-family: "Arial Black", sans-serif;
+            color: #ff0000;
+            background-color: #f2f2f267;
+            text-decoration: none;
+            max-width: calc(100% - 140px);
+		}
+		.button:hover {
+			transform: scale(1.05);
+			border-color: #ff000038;
+		}
+
+
+    .text {
+    color: #ff0000a8;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-weight: bold;
+    font-size: 24px;
+    opacity: 0.8;
+  }
+  .text:before {
+    content: "{";
+    display: inline-block;
+    animation: pulse 0.4s alternate infinite ease-in-out;
+  }
+  .text:after {
+    content: "}";
+    display: inline-block;
+    animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    to {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+  }
+
+  main {
+  background-color: #ff000034;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 10px;
+  }
+  .text1 {
+    color: #ff0000;
+    font-family: "Arial Black", sans-serif;
+
+  }
+  .text2 {
+    
+    color: #00ff00;
+    font-family: "Arial Black", sans-serif;
+  }
+   
+  #loading-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: red;
+      }
+      .fade-out {
+        animation: fadeOut 1s forwards;
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+
+ </style>
+</head>
+<body>
+  <script>
+  <div id="loading-bar"></div>
+    window.addEventListener("load", function() {
+      var loadingBar = document.getElementById("loading-bar");
+      loadingBar.style.display = "none";
+    });
+    </script>
+  <script>
+		var now = new Date();
+		var month = now.getMonth() + 1; // получаем номер текущего месяца (от 0 до 11)
+
+		if (month >= 3 && month <= 5) {
+			// весна (март, апрель, май)
+			document.body.style.backgroundImage = "url('./images/Spring.webp')";
+		} else if (month >= 6 && month <= 8) {
+			// лето (июнь, июль, август)
+			document.body.style.backgroundImage = "url('./images/Summer.webp')";
+		} else if (month >= 9 && month <= 11) {
+			// осень (сентябрь, октябрь, ноябрь)
+			document.body.style.backgroundImage = "url('./images/Autumn.webp')";
+		} else {
+			// зима (декабрь, январь, февраль)
+			document.body.style.backgroundImage = "url('./images/Winter.webp')";
+		}
+</script>
+ <header>
+
+  <img src="./images/title.png" alt="Картинка" class="center">
+ </header>
+ <nav>
+  <ul>
+    <div class="container">
+      <a button onclick="window.location.href='./index.html'" target="_blank" class="button">
+          <span>Главная</span>
+      </a>
+      <a button onclick="window.location.href='./info.html'" target="_blank" class="button">
+          <span>Информатия</span>
+      </a>
+      <a button onclick="window.location.href='./host.html'" target="_blank" class="button">
+          <span>Хостинг</span>
+      </a>
+      <a button onclick="window.location.href='./apps.html'" target="_blank" class="button">
+          <span>Программы</span>
+      </a>
+  </ul>
+  <div role="button">
+ <span class="glow"></span>
+  <div>
+  </div>
+  </div>
+ </nav>
+ <main>
+
+  
+
+  </body>
+<p><span class="text">Нажмите F3 чтобы открыть поиск</span></p>
+<p class="text2">| Информатия сайта</p>
+<p class="text2">| Будующие возможности сайта</p>
+<p class="text2">| 1. Добавлять свои приложения</p>
+<p class="text2">| 2. Создать свой хостинг</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p></p>
+<p></p>
+<p></p>
+<p class="text2">| SLLauncher</p>
+<p class="text2">| Уже доступен!</p>
+<p class="text2">| Скачать SLLauncher</p>
+<p class="text2">| Как что делать ниже</p>
+<h2 class="text1">Как скачать?</h2>
+<p class="text2">| 1. Скачайте программу</p>
+<p class="text2">| 2. Распакуйте архив на только диск C на рабочий стол</p>
+<p class="text2">| 3. Заходим в папку и запускаем SLinstaller</p>
+<p class="text2">| 4. В открывшемся окне пишем Да</p>
+<p class="text2">| 5. Ожидайте пару секунд пока не напишет запустить программу</p>
+<p class="text2">| 6. Запускаете программу</p>
+<h2 class="text1">Информация</h2>
+<p class="text2">| 1. Добавлена программа.</p>
+<p class="text2">| 2. Тестирование программы.</p>
+<p class="text2">| 3. При обновлении программа предуридит</p>
+<p class="text2">| 4. Режим разрабочика</p>
+<p class="text2">| 5. Бесплатный майнкрафт</p>
+<h2 class="text1">Рекомендуемые технические характиристики</h2>
+<p class="text2">| Процессор i3-2377M ядер 4 частота ~1.0-1.5 Hz</p>
+<p class="text2">| Память 4 GB</p>
+<p class="text2">| Windows 10-11 x64-bit</p>
+<p class="text2">| Диск SSD-HDD-MicroSD 2,00+ GB</p>
+<h2 class="text1">Разрабочики</h2>
+<p class="text2">| @DenBroLiik</p>
+<h2 class="text1">Тестировщики</h2>
+<p class="text2">| @DenBroLiiik</p>
+<p class="text2">| @liik230</p>
+<h2 class="text1">Языки</h2>
+<p class="text2">| java-63%</p>
+<p class="text2">| PhP-12%</p>
+<p class="text2">| Shell-22%</p>
+<p class="text2">| Другие-3%</p>
+<h2 class="text1">Ссылки</h2>
+<p class="text2">| YouTube</p>
+<p class="text2">| версия 1.19.80 следующая 1.20.0</p>
+<p class="text2">| Discord</p>
+ </main>
+ <footer>
+  <h1><span class="footer"><img src="./images/title-sl.png" width="16" height="16">Сайт ScyLick&copy; 2023-2030</span></h1>
+ </footer>
+</body>
+</html>

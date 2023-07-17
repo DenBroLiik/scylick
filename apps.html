@@ -1,0 +1,504 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+ <title>ScyLick.ru</title>
+ <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
+ <html lang="ru"></html>
+    <meta charset="UTF-8">
+ <style>
+  /* CSS-стили для вашего сайта */
+
+  title {
+    color: #ff0000;
+    background-color: #b72a2a;
+  }
+  body {
+   /* background: url(/scylick/images/2020-01-24-21.webp); */
+   background-repeat: repeat;
+	 background-size: cover;
+   background-color: #f1f1f1;
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+  }
+  header {
+   padding: 20px;
+   text-align: center;
+   display: flex;
+   justify-content: space-between; 
+}
+  nav {
+    display: flex;
+    justify-content: space-between;
+  }
+  nav ul {
+	width: 9999px;
+    height: 80px;
+    background-color: #ff000034;
+  border: 2px solid red;
+  border-radius: 10px;
+  padding: 10px;
+   display: flex;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+  nav li {
+   margin: 0 10px;
+  }
+  nav a {
+   color: #ae00ff;
+   background-color: #b700ff1f;
+   text-decoration: none;
+   text-transform: uppercase;
+  }
+  nav a:hover {
+   color: #5a327a;
+  }
+
+  @font-face {
+  font-family: 'Consolas';
+  src: url('./fonts/Consolas.ttf') format('truetype');
+  }
+  footer {
+   background-color: #ff0022b2;
+   color: #1f3a00;
+   padding: 5px;
+   text-align: center;
+   font-family: 'Consolas', sans-serif;
+  }
+  header {
+    display: flex;
+    flex-flow: row;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 5.5px;
+    justify-content: center;
+    background: rgba(255, 0, 21, 0);
+    border-radius: 5px;
+    color: #332e2e;
+    filter: drop-shadow(-21px -10px 9px rgba(255, 0, 21, 0.03)) drop-shadow(-12px -6px 8px rgba(255, 0, 21, 0.1)) drop-shadow(-5px -2px 6px rgba(255,34,51,.17)) drop-shadow(-1px -1px 3px rgba(255,34,51,.2)) drop-shadow(0 0 0 rgba(255,34,51,.2));
+  }
+  .center {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;  
+  height: auto;
+  }
+
+  .footer {
+    color: #ffffff;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-weight: bold;
+    font-size: 24px;
+    opacity: 0.8;
+  }
+  .footer:before {
+    content: "{";
+    display: inline-block;
+    animation: pulse 0.4s alternate infinite ease-in-out;
+  }
+  .footer:after {
+    content: "}";
+    display: inline-block;
+    animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    to {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+  }
+
+  nav {
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f200;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			max-width: 100px;
+			margin: 0 auto;
+		}
+		.button {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 10px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 1px solid #ff0000af;
+			border-radius: 3px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+            color: #ff0000;
+            background-color: #f2f2f2;
+            text-decoration: none;
+            max-width: calc(100% - 50px);
+		}
+		.button:hover {
+			transform: scale(0.5);
+			border-color: #ff000038;
+
+        }
+
+
+
+  body {
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			max-width: 800px;
+			margin: 0 auto;
+		}
+		.button {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 20px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 2px solid #ff0000af;
+			border-radius: 5px;
+			padding: 10px;
+			font-family: "Arial Black", sans-serif;
+            color: #ff0000;
+            background-color: #f2f2f267;
+            text-decoration: none;
+            max-width: calc(100% - 140px);
+		}
+		.button:hover {
+			transform: scale(1.05);
+			border-color: #ff000038;
+		}
+		.button img {
+			width: 100px;
+			height: 100px;
+			margin-bottom: 10px;
+		}
+
+
+    #message {
+        border: 3px solid rgba(255, 0, 0, 0.60);
+        border-radius: 10px;
+        padding: 10px;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        left: 1000px;
+        background-color: #ff000060;
+        /* filter: blur(5px); */
+        display: none;
+      }
+      .slide-in {
+        animation: slideIn 0.7s forwards;
+      }
+      .slide-out {
+        animation: slideOut 1s 
+      }
+      @keyframes slideIn {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+      }
+      @keyframes slideOut {
+        from { transform: translateX(0); }
+        to { transform: translateX(100%); }
+      }
+      #message h1 {
+        font-size: 20px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      #message p {
+        font-size: 14px;
+        font-family: "Arial Black", sans-serif;
+        color: #b1b1b1;
+      }
+
+
+
+
+
+      #menu {
+        border: 3px solid #ff0000;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        height: 500px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .menu_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      }
+      .menu_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .menu_button_install {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #009b00;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #009b00;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 40%;
+        right: 20%;
+        font-size: 26px;
+        line-height: 10px;
+        left: 500px;
+      }
+      .menu_button_install:hover {
+        transform: scale(1.05);
+			  border-color: #009b00;
+        font-family: "Arial Black", sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      #menu h1 {
+        line-height: 6px;
+        text-indent: 50%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      #menu p {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+
+      #loading-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: red;
+      }
+      .fade-out {
+        animation: fadeOut 1s forwards;
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+
+
+ </style>
+</head>
+<body>
+  <div id="loading-bar"></div>
+  <script>
+        window.addEventListener("load", function() {
+        var loadingBar = document.getElementById("loading-bar");
+        loadingBar.classList.add("fade-out");
+        setTimeout(function() {
+          loadingBar.style.display = "none";
+        }, 1000);
+      });
+  </script>
+
+  <script>
+		var now = new Date();
+		var month = now.getMonth() + 1; // получаем номер текущего месяца (от 0 до 11)
+
+		if (month >= 3 && month <= 5) {
+			// весна (март, апрель, май)
+			document.body.style.backgroundImage = "url('./images/Spring.webp')";
+		} else if (month >= 6 && month <= 8) {
+			// лето (июнь, июль, август)
+			document.body.style.backgroundImage = "url('./images/Summer.webp')";
+		} else if (month >= 9 && month <= 11) {
+			// осень (сентябрь, октябрь, ноябрь)
+			document.body.style.backgroundImage = "url('./images/Autumn.webp')";
+		} else {
+			// зима (декабрь, январь, февраль)
+			document.body.style.backgroundImage = "url('./images/Winter.webp')";
+		}
+	</script>
+
+ <header>
+
+  <img src="./images/title.png" width="1600" class="center" >
+ </header>
+ <nav>
+  <ul>
+    <div class="container">
+    <a button onclick="window.location.href='./index.html'" target="_blank" class="button">
+        <span>Главная</span>
+    </a>
+    <a button onclick="window.location.href='./info.html'" target="_blank" class="button">
+        <span>Информатия</span>
+    </a>
+    <a button onclick="window.location.href='./host.html'" target="_blank" class="button">
+        <span>Хостинг</span>
+    </a>
+    <a button onclick="window.location.href='./apps.html'" target="_blank" class="button">
+        <span>Программы</span>
+    </a>
+  </ul>
+  <div role="button">
+ <span class="glow"></span>
+  <div>
+  </div>
+  </div>
+ </nav>
+ <main>
+    <img src="./images/title-apps.png" class="center">
+    <div class="container">
+		<a href="https://www.mediafire.com/file/2d2woo5lw1mixfp/SL.zip/file" target="_blank" class="button">
+			<img src="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" alt="Button 1">
+			<span>SLLauncher</span>
+		</a>
+		<a button onclick="showMessage()" onclick="window.location.href='#'" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 2">
+			<span>Нет товара</span>
+		</a>
+		<a button onclick="openMenu()" onclick="window.location.href='#'" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 3">
+			<span>Нет товара</span>
+		</a>
+		<a href="#" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 4">
+			<span>Нет товара</span>
+		</a>
+		<a href="#" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 5">
+			<span>Нет товара</span>
+		</a>
+		<a href="#" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 6">
+			<span>Нет товара</span>
+		</a>
+		<a href="#" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 7">
+			<span>Нет товара</span>
+		</a>
+		<a href="#" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 8">
+			<span>Нет товара</span>
+		</a>
+		<a href="#" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 9">
+			<span>Нет товара</span>
+		</a>
+		<a href="#" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 10">
+			<span>Нет товара</span>
+		</a>
+		<a href="#" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 11">
+			<span>Нет товара</span>
+		</a>
+		<a href="#" target="_blank" class="button">
+			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 12">
+			<span>Нет товара</span>
+		</a>
+	</div>
+  <div id="menu">
+    <a button onclick="closeMenu()" target="_blank" class="menu_button">
+      <span>Закрыть</span>
+    </a>
+    <h1>TETLE</h1>
+    <p>Hello</p>
+    <a button onclick="window.location.href='#'" target="_blank" class="menu_button_install">
+      <span>Скачать</span>
+    </a>
+    <p>MY</p> 
+    <!-- <button onclick="closeMenu()" >Закрыть</button> -->
+  </div>
+  <script>
+    function openMenu() {
+      var menu = document.getElementById("menu");
+      menu.style.display = "block";
+    }
+    function closeMenu() {
+      var menu = document.getElementById("menu");
+      menu.style.animation = "fadeOut 1s forwards";
+      setTimeout(function() {
+        menu.style.display = "none";
+        menu.style.animation = "fadeIn 1s forwards";
+      }, 1000);
+    }
+  </script>
+  <div id="message">
+    <h1>Внимание</h1>
+    <p>У вас нет прав чтобы скачать это приложение.</p>
+  </div>
+  <script>
+      function showMessage() {
+        var message = document.getElementById("message");
+        message.classList.add("slide-in");
+        message.style.display = "block";
+        setTimeout(function() {
+          message.classList.remove("slide-in");
+          message.classList.add("slide-out");
+          setTimeout(function() {
+            message.style.display = "none";
+            message.classList.remove("slide-out");
+          }, 1000);
+        }, 3000);
+      }
+  </script>
+ </main>
+ <footer>
+	
+	<h1><span class="footer"><img src="./images/title-sl.png" width="14" height="14">Сайт ScyLick&copy; 2023-2030</span></h1>
+	
+</footer>
+
+
+</body>
+</html>

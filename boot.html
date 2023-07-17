@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DEV</>>os</title>
+    </head>
+    <style>
+
+    footer {
+        position: fixed;
+        display: flex;
+  justify-content: center;
+  align-items: center;
+    top: 75%;
+    left: 50%;
+    background-color: rgb(10, 10, 10);
+    }
+    .loader {
+    width: 48px;
+    height: 48px;
+    border: 7px solid #ffffff;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1.5s linear infinite;
+    
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        /* border-color: white; */
+        border: 7px solid #d400ff;
+        transform: rotate(25deg);
+    }
+    50% {
+        transform: rotate(100deg);
+    }
+    75% {
+        /* border-color: red; */
+        border: 7px solid #ff0000;
+        transform: rotate(175deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    }
+    img {
+    display: block;
+    margin: 0 auto;
+    
+}
+    body {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 35%;
+    left: 45.8%;
+    background-color: rgb(10, 10, 10);
+    }
+    </style>
+    <body>
+        <img src="./images/title-sl.png" width="180" height="180" alt="Your Image">
+    </body>
+    <footer>
+        <span class="loader"></span>
+    </footer>
+</html>

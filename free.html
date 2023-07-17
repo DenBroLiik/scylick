@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+  <div class="loader"></div>
+<head>
+ <title>ScyLick.ru</title>
+ <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
+ <style>
+  /* CSS-стили для вашего сайта */
+
+  title {
+    color: #ff0000;
+    background-color: #b72a2a;
+  }
+  body {
+   background-color: #f3f3f3;
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+  }
+  header {
+   background-color: #00b3ff;
+   color: #00ae14;
+   padding: 20px;
+   text-align: center;
+  }
+  nav {
+   background-color: #ff0022b2;
+   border: 1px solid #ff002296;
+   display: flex;
+   justify-content: space-between;
+   padding: 10px;
+  }
+  nav ul {
+   display: flex;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+  }
+  nav li {
+   margin: 0 10px;
+  }
+  nav a {
+   color: #ae00ff;
+   background-color: #b700ff1f;
+   text-decoration: none;
+   text-transform: uppercase;
+  }
+  nav a:hover {
+   color: #5a327a;
+  }
+  main {
+   margin: 20px;
+  }
+  footer {
+   background-color: #ff0022b2;
+   color: #1f3a00;
+   padding: 20px;
+   text-align: center;
+  }
+  header {
+    display: flex;
+    flex-flow: row;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0 5.5px;
+    justify-content: center;
+    background: rgba(255, 0, 21, 0);
+    border-radius: 5px;
+    color: #332e2e;
+    filter: drop-shadow(-21px -10px 9px rgba(255, 0, 21, 0.03)) drop-shadow(-12px -6px 8px rgba(255, 0, 21, 0.1)) drop-shadow(-5px -2px 6px rgba(255,34,51,.17)) drop-shadow(-1px -1px 3px rgba(255,34,51,.2)) drop-shadow(0 0 0 rgba(255,34,51,.2));
+  }
+  .center {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;  
+  height: auto;
+  }
+
+  .footer {
+    color: #fff;
+    font-family: Consolas, Menlo, Monaco, monospace;
+    font-weight: bold;
+    font-size: 24px;
+    opacity: 0.8;
+  }
+  .footer:before {
+    content: "{";
+    display: inline-block;
+    animation: pulse 0.4s alternate infinite ease-in-out;
+  }
+  .footer:after {
+    content: "}";
+    display: inline-block;
+    animation: pulse 0.4s 0.3s alternate infinite ease-in-out;
+  }
+
+  @keyframes pulse {
+    to {
+      transform: scale(0.8);
+      opacity: 0.5;
+    }
+  }
+
+
+
+
+  body {
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+		
+		.container {
+			width: 100%;
+			height: 200px;
+			overflow: hidden;
+			position: relative;
+		}
+		
+		.slider {
+			display: flex;
+			position: absolute;
+			left: 0;
+			top: 0;
+			animation: slide 10s linear infinite;
+		}
+		
+		.slider img {
+			width: 200px;
+			height: 200px;
+			margin-right: 20px;
+		}
+		
+		@keyframes slide {
+			0% {
+				transform: translateX(0);
+			}
+			100% {
+				transform: translateX(-100%);
+			}
+		}
+
+
+
+
+ </style>
+</head>
+<body>
+ <header>
+<img src="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" width="190" height="190">
+  <img src="C:\scylick\images\title.png" alt="Картинка" class="center">
+ </header>
+ <nav>
+  <ul>
+    <span>
+  <li><span class="footer"><a href="https://www.mediafire.com/file/2d2woo5lw1mixfp/SL.zip/file">Скачать</a></span></li>
+    </span>
+    <span>
+  <li><span class="footer"><a href="/scylick/info.html">Информатия</a></span></li>
+    </span>
+    <span>
+   <li><span class="footer"><a href="/scylick/free.html">Бонусы</a></span></li>
+    </span>
+    <span>
+   <li><span class="footer"><a href="/scylick/apps.html">Программы</a></span></li>
+    </span>
+  </ul>
+  <div role="button">
+ <span class="glow"></span>
+  <div>
+  <span>
+    <span><li><span class="footer"><a href="/registration.html">Авторизатия</a></span></li></span>
+  </span>
+  </div>
+  </div>
+ </nav>
+ <main>
+   <div class="container">
+		<div class="slider">
+			<img src="https://via.placeholder.com/200x200?text=Slide%201" alt="Slide 1">
+			<img src="https://via.placeholder.com/200x200?text=Slide%202" alt="Slide 2">
+			<img src="https://via.placeholder.com/200x200?text=Slide%203" alt="Slide 3">
+			<img src="https://via.placeholder.com/200x200?text=Slide%204" alt="Slide 4">
+			<img src="https://via.placeholder.com/200x200?text=Slide%205" alt="Slide 5">
+		</div>
+	</div>
+ </main>
+ <footer>
+   <p><span class="footer">Сайт ScyLick&copy; 2023</span></p>
+ </footer>
+</body>
+</html>

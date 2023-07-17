@@ -1,0 +1,29 @@
+<script>
+
+  const videoOB = "Начальное значение";
+  // Создание переменной title
+  const title = 'ScyLick.ru';
+
+  // Изменение заголовка страницы
+  document.title = title;
+  // Функция для изменения значения переменной и обновления элемента <h1>
+  function changeValue(newValue) {
+  videoOB = newValue;
+  document.getElementById("value").innerText = videoOB;
+  
+  }
+  changeValue("Новое значение");
+</script>
+
+
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+  <script>
+  window.location.replace("./scylick.html");
+  </script>
+</head>
+</html>

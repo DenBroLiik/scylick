@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ошибка 503</title>
+	<meta charset="utf-8">
+	<style>
+
+footer {
+   background-color: #00b7ffb2;
+   color: #00b7ff;
+   padding: 5px;
+   text-align: center;
+  }
+.container {
+  text-align: center;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.images img {
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease-in-out;
+}
+
+.images img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+h1 {
+font-family: 'Helvetica', sans-serif;  
+font-size: 24px;  
+transition: all 0.3s ease-in-out;
+}
+
+h1:hover {
+font-size: 23px;  
+font-weight: bold;  
+color: #ff0000;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+
+	</style>
+    <script>
+const images = document.querySelectorAll('.images img');
+images.forEach(img => {
+  img.addEventListener('click', () => {
+    alert(`Вы выбрали ${img.alt}`);
+  });
+});
+
+// Добавляем обработчик событий для заголовка
+const h1 = document.querySelector('h1');
+h1.addEventListener('click', () => {
+  alert('Вы навели курсор на заголовок');
+});
+
+
+    </script>
+</head>
+<body>
+	<h1>Ошибка 503: Сервис недоступен</h1>
+	<h1>Пожалуйста, попробуйте зайти на сайт позже.</h1>
+</body>
+<h1>Ошибка возникла зависания сервера или</h1>
+<h1>серевер выключин по техническим причинам</h1>
+
+
+
+<p>Мы стараемся как можно быстрее решить проблему</p>
+<footer>
+<div class="images">
+    <img src="/scylick/images/wan.webp" alt="Изображение 1">
+    <img src="image2.jpg" alt="Изображение 2">
+    <img src="image3.jpg" alt="Изображение 3">
+</div>
+</footer>
+</html>

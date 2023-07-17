@@ -1,0 +1,601 @@
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>ScyLick.ru</title>
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
+    <html lang="ru"></html>
+    <meta charset="UTF-8">
+<style>
+
+    /* footer {
+        background-color: #ffffff5e;
+        color: #1f3a00;
+        padding: 5px;
+        text-align: center;
+        border: 2px solid red;
+        border-radius: 10px;
+        padding: 10px;
+    } */
+
+
+
+
+      #loading-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: red;
+      }
+      .fade-out {
+        animation: fadeOut 1s forwards;
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      .center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border: 3px solid green;
+}
+
+footer {
+    background-color: #ff00224b;
+    border: 2px solid rgba(255, 0, 0, 0.74);
+    border-radius: 10px;
+
+    position: fixed;
+    bottom: 0;
+    height: 40px;
+    left: calc(50% - 300px);
+    right: calc(50% - 300px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+
+#taskbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#taskbar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    }
+
+    @keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+#taskbar a:active {
+    animation: jump 0.2s ease-in-out;
+}
+    
+
+#taskbar a:hover {
+    color: #ff0000;
+}
+
+#taskbar a + a {
+  margin-left: 20px;
+  
+}
+
+
+.s1::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 6px;
+        background-color: black;
+        transform: scaleX(0);
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    .s1.clicked::after {
+        transform: scaleX(1);
+    }
+
+
+    #start {
+        border: 3px solid #ff0000;
+        border-radius: 10px;
+        position: fixed;
+        top: 63%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 595px;
+        height: 600px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .start_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 460px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 90px;
+      right: -200px;
+      }
+      .start_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        z-index: 1;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      @font-face {
+  font-family: 'Consolas';
+  src: url('./fonts/Consolas.ttf') format('truetype');
+      }
+      .start_button_off {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: -6px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #252925;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: 'Roboto', sans-serif;
+        color: #c2c2c2;
+        background-color: #202220;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 560px;
+        right: 420px;
+        /* font-size: 18px;
+        line-height: 18px;
+        left: 700px; */
+        
+      }
+      .start_button_off:hover {
+        transform: scale(1.05);
+			  border-color: #555555;
+        font-family: 'Roboto', sans-serif;
+      }
+        .start_button_setting {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: -6px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #252925;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: 'Roboto', sans-serif;
+        color: #d8d8d8;
+        background-color: #202220;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 100px;
+        right: 510px;
+        
+      }
+      .start_button_setting:hover {
+        transform: scale(1.05);
+			  border-color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      #start h1 {
+        line-height: 6px;
+        text-indent: 35%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      #start p {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+
+
+      #explorer {
+        border: 3px solid #ff0000;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        height: 500px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .explorer_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      }
+      .explorer_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .explorer_button_desk {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #009b00;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #009b00;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 40%;
+        right: 20%;
+        font-size: 26px;
+        line-height: 10px;
+        left: 500px;
+      }
+      .explorer_button_desk:hover {
+        transform: scale(1.05);
+			  border-color: #009b00;
+        font-family: "Arial Black", sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      #explorer h1 {
+        line-height: 6px;
+        text-indent: 50%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      #explorer p {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+
+#cmd {
+        border: 3px solid #ff0000;
+        border-radius: 5px;
+        position: fixed;
+        top: 88.5%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+        width: 500px;
+        height: 200px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .cmd_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      }
+      .cmd_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      #cmd h1 {
+        line-height: 6px;
+        text-indent: 45%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      #cmd p {
+        text-indent: 4%;
+        line-height: 8px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+      #cmd {
+        background-color: rgba(255, 0, 0, 0.096);
+        color: rgb(0, 0, 0);
+        font-family: monospace;
+        text-indent: 2%;
+        line-height: 6px;
+        font-size: 18px;
+        font-family: "Consolas", sans-serif;
+        
+      }
+      #terminal {
+        line-height: 17px;
+        white-space: pre-wrap;
+        overflow-y: auto;
+        height: 10vh;
+      }
+      #input {
+        background-color: rgba(255, 0, 0, 0.096);
+        border: none;
+        color: rgb(255, 0, 0);
+        font-family: monospace;
+        width: 99%;
+        
+
+      }
+
+</style>
+    </head>
+    <body>
+        <script>
+            var now = new Date();
+            var month = now.getMonth() + 1; // получаем номер текущего месяца (от 0 до 11)
+    
+            if (month >= 3 && month <= 5) {
+                // весна (март, апрель, май)
+                document.body.style.backgroundImage = "url('./images/Spring.webp')";
+            } else if (month >= 6 && month <= 8) {
+                // лето (июнь, июль, август)
+                document.body.style.backgroundImage = "url('./images/Summer.webp')";
+            } else if (month >= 9 && month <= 11) {
+                // осень (сентябрь, октябрь, ноябрь)
+                document.body.style.backgroundImage = "url('./images/Autumn.webp')";
+            } else {
+                // зима (декабрь, январь, февраль)
+                document.body.style.backgroundImage = "url('./images/Winter.webp')";
+            }
+        </script>
+    </body>
+    <header>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <h1>Hello</h1>
+        <a button href="" target="_blank" class="app">
+          <span>app</span>
+        </a>
+        
+
+
+    </header>
+
+    <div id="start">
+      <a button onclick="closeStart()" target="_blank" class="start_button">
+        <span>Закрыть</span>
+      </a>
+      <h1>Панель управления</h1>
+      <p>Приложения и многое другое</p>
+      <a button onclick="openSetting()" target="_blank" class="start_button_setting">
+        <img src="./images/setting.png" width="40" height="40" alt="button 1">
+        <span></span>
+      </a>
+      <a button id="dropdown" target="_blank" class="start_button_panel_off">
+        <span></span>
+      </a>
+    <div id="dropdown-content">
+        <a button onclick="window.location.href='./exit.html'" target="_blank" class="start_button_off">
+        <span>Завершение работы</span>
+      </a>
+    </div>
+      
+      
+    </div>
+    <script>
+      function openStart() {
+        var start = document.getElementById("start");
+        start.style.display = "block";
+      }
+      function closeStart() {
+        var start = document.getElementById("start");
+        start.style.animation = "fadeOut 1s forwards";
+        setTimeout(function() {
+          start.style.display = "none";
+          start.style.animation = "fadeIn 1s forwards";
+        }, 1000);
+      }
+      </script>
+    
+    <div id="explorer">
+      <a button onclick="closeExplorer()" target="_blank" class="explorer_button">
+        <span>Закрыть</span>
+      </a>
+      <h1>Проводник</h1>
+      <a button onclick="window.location.href='#'" target="_blank" class="explorer_button_desk">
+        <span>Компьютер</span>
+      </a>
+      <p>MY</p> 
+    </div>
+    <script>
+      function openExplorer() {
+        var explorer = document.getElementById("explorer");
+        explorer.style.display = "block";
+      }
+      function closeExplorer() {
+        var explorer = document.getElementById("explorer");
+        explorer.style.animation = "fadeOut 1s forwards";
+        setTimeout(function() {
+          explorer.style.display = "none";
+          explorer.style.animation = "fadeIn 1s forwards";
+        }, 1000);
+      }
+      </script>
+
+      <div id="cmd">
+      <a button onclick="closeCmd()" target="_blank" class="cmd_button">
+        <span>Закрыть</span>
+      </a>
+      <h1>CMD</h1>
+      <p></p>
+      <p>Командная строка windows и linux</p>
+      <div id="terminal"></div>
+      <input id="input" type="text" autofocus />
+    </div>
+    <script>
+      function openCmd() {
+        var cmd = document.getElementById("cmd");
+        cmd.style.display = "block";
+      }
+      function closeCmd() {
+        var cmd = document.getElementById("cmd");
+        cmd.style.animation = "fadeOut 1s forwards";
+        setTimeout(function() {
+          cmd.style.display = "none";
+          cmd.style.animation = "fadeIn 1s forwards";
+        }, 1000);
+      }
+      </script>
+      
+      <script>
+        const terminal = document.getElementById("terminal");
+        const input = document.getElementById("input");
+        input.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            const command = input.value;
+            terminal.innerHTML += "$> " + command + "\n";
+            input.value = "";
+            if (command === 'cls') {
+                    output.textContent = '';
+            }
+            // Здесь вы можете добавить свой код для обработки команд
+
+
+            output.scrollTop = output.scrollHeight;
+          }
+        });
+      </script>
+
+    <footer>
+        <div id="taskbar">
+        <a button onclick="openStart()" target="_blank" class="s1">
+            <img src="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" width="31" height="31" alt="Button 1">
+            <span></span>
+        </a>
+         <a button onclick="openExplorer()" target="_blank" class="s1">
+            <img src="./images/explorer.png" width="31" height="31" alt="Button 2">
+            <span></span>
+        </a>
+         <a button onclick="openCmd()" target="_blank" class="s1">
+            <img src="./images/cmd.png" width="31" height="31" alt="Button 3">
+            <span></span>
+        </a>
+        </div>
+        <script>
+ 
+</script>
+        </script>
+    </footer>
+</html>
