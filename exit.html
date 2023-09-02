@@ -1,20 +1,15 @@
 <script>
+    if (localStorage.getItem('visited')) {
+    closeStart();
+} else {
+    // пользователь не был на сайте, перебрасываем на другой сайт через 3 секунды
+    
+    setTimeout(function() {
+        window.location.href = './flashboot.html';
+    }, 1);
+}
 
-let tabCount = 0;
-
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Tab') {
-    event.preventDefault();
-    tabCount++;
-    if (tabCount === 3) {
-      window.location.href = './flashboot.html';
-    }
-  } else {
-    tabCount = 0;
-  }
-});
-
-  </script>
+</script>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,23 +17,6 @@ document.addEventListener('keydown', function(event) {
         <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
     <html lang="ru"></html>
     <meta charset="UTF-8">
-
-<script>
-if (localStorage.getItem('visited')) {
-
-  alert('Нажмите F11 для полного погружения!');
-  
-    // пользователь уже был на сайте, не перебрасываем
-} else {
-    // пользователь не был на сайте, перебрасываем на другой сайт через 3 секунды
-
-    setTimeout(function() {
-        window.location.href = './flashboot.html';
-    }, 1200);
-}
-
-</script>
-
     </head>
     <style>
 
@@ -91,18 +69,32 @@ if (localStorage.getItem('visited')) {
 }
     body {
     
-
     position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 35%;
+    top: 26%;
     left: 45.8%;
     background-color: rgb(10, 10, 10);
     }
+    h1 {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Arial Black", sans-serif;
+        border: #ff0000;
+        border-radius: 10px;
+        color: #d400ff;
+        top: 57%;
+        left: 41%;
+    }
+    
     </style>
     <body>
+        
         <img src="./images/title-sl.png" width="180" height="180" alt="Your Image">
+        <h1>Завершение работы</h1>
     </body>
     <footer>
         <span class="loader"></span>
@@ -116,12 +108,14 @@ if (localStorage.getItem('visited')) {
         setTimeout(function() {
           let audio = document.getElementById("myAudio");
           audio.play();
-        }, 3500);
+        }, 5500);
       </script>
     <script>
         setTimeout(function() {
-  window.location.href = "os.html";
-}, 4000);
+  window.location.href = "index.html";
+}, 6000);
     </script>
     
 </html>
+
+

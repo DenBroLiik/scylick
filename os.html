@@ -1,5 +1,21 @@
+<script>
+document.addEventListener('keydown', function(event) {
+  if (event.ctrlKey && event.key === 'ArrowLeft') {
+    openStart()
+    // Здесь можно добавить код для выполнения действия
+  }
+});
+if (localStorage.getItem('visited')) {
+    closeStart();
+} else {
+    // пользователь не был на сайте, перебрасываем на другой сайт через 3 секунды
+    
+    setTimeout(function() {
+        window.location.href = './flashboot.html';
+    }, 1);
+}
 
-
+</script>
 
 <!DOCTYPE html>
 <html>
@@ -50,7 +66,6 @@ footer {
     background-color: #ff00224b;
     border: 2px solid rgba(255, 0, 0, 0.74);
     border-radius: 10px;
-
     position: fixed;
     bottom: 0;
     height: 40px;
@@ -212,6 +227,34 @@ footer {
 			  border-color: #555555;
         font-family: 'Roboto', sans-serif;
       }
+      .start_button_reboot {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: -6px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #252925;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: 'Roboto', sans-serif;
+        color: #c2c2c2;
+        background-color: #202220;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 560px;
+        right: 10px;
+        /* font-size: 18px;
+        line-height: 18px;
+        left: 700px; */
+        
+      }
+      .start_button_reboot:hover {
+        transform: scale(1.05);
+			  border-color: #555555;
+        font-family: 'Roboto', sans-serif;
+      }
         .start_button_setting {
         display: flex;
 			  flex-direction: column;
@@ -233,6 +276,31 @@ footer {
         
       }
       .start_button_setting:hover {
+        transform: scale(1.05);
+			  border-color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+      }
+      .start_button_camera {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: -6px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #252925;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: 'Roboto', sans-serif;
+        color: #d8d8d8;
+        background-color: #202220;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 100px;
+        right: 420px;
+        
+      }
+      .start_button_camera:hover {
         transform: scale(1.05);
 			  border-color: #ffffff;
         font-family: 'Roboto', sans-serif;
@@ -268,9 +336,9 @@ footer {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 1000px;
-        height: 500px;
-        background-color: rgba(255, 255, 255, 0.5);
+        width: 1300px;
+        height: 700px;
+        background-color: rgb(39, 39, 39);
         display: none;
         animation: fadeIn 1s forwards;
       }
@@ -286,7 +354,7 @@ footer {
 			padding: 6px;
 			font-family: "Arial Black", sans-serif;
       color: #ff0000;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(53, 53, 53, 0.5);
       text-decoration: none;
       max-width: calc(100% - 50px);
       position: absolute;
@@ -298,33 +366,221 @@ footer {
 			 border-color: #ff0000ef;
        font-family: "Arial Black", sans-serif;
       }
-      .explorer_button_desk {
+      .explorer_button_search {
         display: flex;
 			  flex-direction: column;
 			  align-items: center;
 			  margin: 2px;
 			  cursor: pointer;
 			  transition: all 0.3s ease-in-out;
-			  border: 3px solid #009b00;
-			  border-radius: 10px;
-			  padding: 10px;
+			  border: 0px solid #131313;
+			  border-radius: 20px;
+			  padding: 20px 539px;
 			  font-family: "Arial Black", sans-serif;
-        color: #000000;
-        background-color: #009b00;
+        color: #c9c9c9;
+        background-color: #131311;
         text-decoration: none;
         max-width: calc(100% - 140px);
         position: absolute;
-        top: 40%;
-        right: 20%;
-        font-size: 26px;
-        line-height: 10px;
-        left: 500px;
+        top: 8%;
+        right: 3%;
+        font-size: 22px;
+        line-height: 20px;
+
       }
-      .explorer_button_desk:hover {
-        transform: scale(1.05);
-			  border-color: #009b00;
+      .explorer_button_search:hover {
+        transform: scale(1.0);
+			  border-color: #333333;
         font-family: "Arial Black", sans-serif;
       }
+      .explorer_button_desk_1 {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 0px solid #131313;
+			  border-radius: 20px;
+			  padding: 30px 220px;
+			  font-family: "Arial Black", sans-serif;
+        color: #c9c9c9;
+        background-color: #131311;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 85%;
+        right: 52%;
+        font-size: 22px;
+        line-height: 20px;
+        
+        
+      }
+      .explorer_button_desk_1:hover {
+        transform: scale(1.0);
+			  background-color: #333333;
+        font-family: "Arial Black", sans-serif;
+      }
+      .explorer_button_desk_2 {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 0px solid #131313;
+			  border-radius: 20px;
+			  padding: 30px 220px;
+			  font-family: "Arial Black", sans-serif;
+        color: #c9c9c9;
+        background-color: #131313;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 85%;
+        right: 3%;
+        font-size: 22px;
+        line-height: 20px;
+        
+      }
+      .explorer_button_desk_2:hover {
+        transform: scale(1.0);
+			  background-color: #333333;
+        font-family: "Arial Black", sans-serif;
+      }
+      .explorer_button_downloads {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 0px solid #131313;
+			  border-radius: 20px;
+			  padding: 30px 220px;
+			  font-family: "Arial Black", sans-serif;
+        color: #c9c9c9;
+        background-color: #131311;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 20%;
+        right: 52%;
+        font-size: 22px;
+        line-height: 20px;
+
+      }
+      .explorer_button_downloads:hover {
+        transform: scale(1.0);
+			  border-color: #333333;
+        font-family: "Arial Black", sans-serif;
+      }
+      .explorer_button_images {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 0px solid #131313;
+			  border-radius: 20px;
+			  padding: 30px 220px;
+			  font-family: "Arial Black", sans-serif;
+        color: #c9c9c9;
+        background-color: #131311;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 20%;
+        right: 3%;
+        font-size: 22px;
+        line-height: 20px;
+
+      }
+      .explorer_button_images:hover {
+        transform: scale(1.0);
+			  border-color: #333333;
+        font-family: "Arial Black", sans-serif;
+      }
+      .explorer_button_video {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 0px solid #131313;
+			  border-radius: 20px;
+			  padding: 30px 220px;
+			  font-family: "Arial Black", sans-serif;
+        color: #c9c9c9;
+        background-color: #131311;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 33%;
+        right: 52%;
+        font-size: 22px;
+        line-height: 20px;
+      }
+      .explorer_button_video:hover {
+        transform: scale(1.0);
+			  border-color: #333333;
+        font-family: "Arial Black", sans-serif;
+      }
+      .explorer_button_audio {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 0px solid #131313;
+			  border-radius: 20px;
+			  padding: 30px 220px;
+			  font-family: "Arial Black", sans-serif;
+        color: #c9c9c9;
+        background-color: #131311;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 33%;
+        right: 3%;
+        font-size: 22px;
+        line-height: 20px;
+      }
+      .explorer_button_audio:hover {
+        transform: scale(1.0);
+			  border-color: #333333;
+        font-family: "Arial Black", sans-serif;
+      }
+      .explorer_button_documents {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 0px solid #131313;
+			  border-radius: 20px;
+			  padding: 30px 220px;
+			  font-family: "Arial Black", sans-serif;
+        color: #c9c9c9;
+        background-color: #131311;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 46%;
+        right: 52%;
+        font-size: 22px;
+        line-height: 20px;
+      }
+      .explorer_button_documents:hover {
+        transform: scale(1.0);
+			  border-color: #333333;
+        font-family: "Arial Black", sans-serif;
+      }
+      
       @keyframes fadeIn {
         from { opacity: 0; }
         to { opacity: 1; }
@@ -433,9 +689,1096 @@ footer {
 
       }
 
+      #setting {
+        border: 3px solid #ff0000;
+        border-radius: 5px;
+        position: fixed;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 95%;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .setting_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      }
+      .setting_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .setting_button_perfomenc {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #ffffff;
+			  border-radius: 6px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #ff0000;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 10%;
+        left: 1%;
+        /* right: 54%; */
+        font-size: 26px;
+        line-height: 10px;
+      }
+      .setting_button_perfomenc:hover {
+        transform: scale(1.05);
+			  border-color: #000000;
+        font-family: "Arial Black", sans-serif;
+      }
+      .setting_button_del {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #ffffff;
+			  border-radius: 6px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #ff0000;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 15%;
+        left: 1%;
+        /* right: 54%; */
+        font-size: 26px;
+        line-height: 10px;
+      }
+      .setting_button_del:hover {
+        transform: scale(1.05);
+			  border-color: #000000;
+        font-family: "Arial Black", sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      #setting h1 {
+        line-height: 6px;
+        text-indent: 40%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      .button_full {
+        top: 30%;
+        right: 80%;
+        padding: 10px 30px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+      /* .button_full {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+      .button_full {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+      .button_full {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+      .button_full {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+      .button_full {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      } */
+      
+      .desktop_app_explorer {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #ffffff;
+			  border-radius: 10px;
+			  padding: 20px 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #ff00001e;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 200px;
+        left: 10px;
+        /* right: 54%; */
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .desktop_app_explorer:hover {
+        transform: scale(1.05);
+			  border-color: #000000;
+        font-family: "Arial Black", sans-serif;
+      }
+      .desktop_app_cmd {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #ffffff;
+			  border-radius: 10px;
+			  padding: 20px 30px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #ff00001e;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 50px;
+        left: 10xp;
+        /* right: 54%; */
+        font-size: 16px;
+        line-height: 20px;
+      }
+      .desktop_app_cmd:hover {
+        transform: scale(1.05);
+			  border-color: #000000;
+        font-family: "Arial Black", sans-serif;
+      }
+      #microsoft {
+        border: 3px solid #ff0000;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        height: 500px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .microsoft_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      }
+      .microsoft_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .microsoft_button_desk {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #009b00;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #009b00;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 40%;
+        right: 20%;
+        font-size: 26px;
+        line-height: 10px;
+        left: 500px;
+      }
+      .microsoft_button_desk:hover {
+        transform: scale(1.05);
+			  border-color: #009b00;
+        font-family: "Arial Black", sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      #microsoft h1 {
+        line-height: 6px;
+        text-indent: 50%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      #microsoft p {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+      #camera {
+        border: 3px solid #ff0000;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        height: 500px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .camera_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      }
+      .camera_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .camera_button_photo {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #009b00;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #009b00;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 40%;
+        right: 20%;
+        font-size: 26px;
+        line-height: 10px;
+        left: 500px;
+      }
+      .camera_button_photo:hover {
+        transform: scale(1.05);
+			  border-color: #009b00;
+        font-family: "Arial Black", sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      #camera h1 {
+        line-height: 6px;
+        text-indent: 50%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      #camera p {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+      #perfomenc {
+        border: 3px solid #ff0000;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        height: 500px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .perfomenc_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      }
+      .perfomenc_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_1 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 10%;
+      right: 85%;
+      }
+      .perfomenc_button_1:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_2 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 10%;
+      right: 70%;
+      }
+      .perfomenc_button_2:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_3 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 30%;
+      right: 85%;
+      }
+      .perfomenc_button_3:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_4 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 30%;
+      right: 70%;
+      }
+      .perfomenc_button_4:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_5 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 90%;
+      right: 40%;
+      }
+      .perfomenc_button_5:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_6 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 50%;
+      right: 85%;
+      }
+      .perfomenc_button_6:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_7 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 50%;
+      right: 70%;
+      }
+      .perfomenc_button_7:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_8 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 70%;
+      right: 85%;
+      }
+      .perfomenc_button_8:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_9 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 70%;
+      right: 70%;
+      }
+      .perfomenc_button_9:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      /* .perfomenc_button_10 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 90%;
+      right: 40%;
+      }
+      .perfomenc_button_10:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      } */
+      .perfomenc_button_11 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 10%;
+      right: 4%;
+      }
+      .perfomenc_button_11:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_12 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 10%;
+      right: 19%;
+      }
+      .perfomenc_button_12:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_13 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 30%;
+      right: 4%;
+      }
+      .perfomenc_button_13:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_14 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 30%;
+      right: 19%;
+      }
+      .perfomenc_button_14:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_15 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 50%;
+      right: 19%;
+      }
+      .perfomenc_button_15:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_16 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 50%;
+      right: 4%;
+      }
+      .perfomenc_button_16:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_17 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 70%;
+      right: 19%;
+      }
+      .perfomenc_button_17:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_18 {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 70%;
+      right: 4%;
+      }
+      .perfomenc_button_18:hover {
+       transform: scale(1.1);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .perfomenc_button_desk {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #009b00;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #009b00;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 40%;
+        right: 20%;
+        font-size: 26px;
+        line-height: 10px;
+        left: 500px;
+      }
+      .perfomenc_button_desk:hover {
+        transform: scale(1.05);
+			  border-color: #009b00;
+        font-family: "Arial Black", sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      #perfomenc h1 {
+        line-height: 6px;
+        text-indent: 50%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      #perfomenc p {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+      #perfomenc input {
+        display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 10%;
+      right: 35%;
+      }
+      body {
+        background-size: 2560px 1440px;
+        /* background-size: 4096px 2160px; */
+        background-image: url('./images/Spring.webp');
+        background-image: url('./images/Summer.webp');
+        background-image: url('./images/Winter.webp');
+        background-image: url('./images/Spring.webp');
+        background-image: url('.jpg');
+        background-image: url('.png');
+        background-image: url('.webp');
+        
+        background-color: #000000;
+      }
+      #fullscreen-toggle {
+            position: fixed;
+            top: 10%;
+            right: 10%;
+            padding: 10px 20px;
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .desktop_app_battary {
+          display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #8d0081;
+			  border-radius: 10px;
+			  padding: 10px 30px;
+			  font-family: "Arial Black", sans-serif;
+        color: rgb(0, 255, 76);
+        background-color: #b700ff36;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 0,5%;
+        left: 70%;
+        /* right: 54%; */
+        font-size: 26px;
+        line-height: 20px;
+        
+      }
+      .desktop_app_battary:hover {
+        transform: scale(1.0);
+			  border-color: blueviolet;
+        font-family: "Arial Black", sans-serif;
+      }
+      #separator {
+            width: 1px;
+            height: 80%;
+            margin: 0 20px;
+            background-color: blueviolet;
+            
+        }
+        
+        #container {
+          
+            display: flex;
+            align-items: center;
+        }
+        .indicator {
+        position: fixed;
+        top: 10px;
+        width: 10px;
+        height: 10px;
+        border-radius: 3px;
+        margin-right: 5px;
+        display: none;
+      }
+
+      #camera-indicator {
+        left: 10px;
+        background-color: rgb(0, 189, 0);
+      }
+
+      #microphone-indicator {
+        left: 30px;
+        background-color: orange;
+      }
+
+      #location-indicator {
+        left: 50px;
+        background-color: blue;
+      }
+      #camera-view {
+        width: 1000px;
+        height: 400px;
+        
+      }
+      #capture-button {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #ffffff;
+			  border-radius: 10px;
+			  padding: 10px 30px;
+			  font-family: "Arial Black", sans-serif;
+        color: rgb(0, 255, 76);
+        background-color: #b700ff36;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 90%;
+        left: 40%;
+        /* right: 54%; */
+        font-size: 26px;
+        line-height: 20px;
+      }
+      #capture-button:hover {
+        transform: scale(1.0);
+			  border-color: blueviolet;
+        font-family: "Arial Black", sans-serif;
+      }
+      
 </style>
     </head>
-    <body>
+    <!-- <body>
+      <div id="camera-indicator" class="indicator"></div>
+    <div id="microphone-indicator" class="indicator"></div>
+    <div id="location-indicator" class="indicator"></div>
+
+    <script>
+      // Функция для проверки доступности камеры
+      function checkCamera() {
+        navigator.mediaDevices
+          .getUserMedia({ video: true })
+          .then(function (stream) {
+            // Доступ к камере предоставлен, отображаем индикатор
+            document.getElementById("camera-indicator").style.display = "block";
+          })
+          .catch(function (error) {
+            // Доступ к камере не предоставлен, скрываем индикатор
+            document.getElementById("camera-indicator").style.display = "none";
+          });
+      }
+
+      // Функция для проверки доступности микрофона
+      function checkMicrophone() {
+        navigator.mediaDevices
+          .getUserMedia({ audio: true })
+          .then(function (stream) {
+            // Доступ к микрофону предоставлен, отображаем индикатор
+            document.getElementById("microphone-indicator").style.display = "block";
+          })
+          .catch(function (error) {
+            // Доступ к микрофону не предоставлен, скрываем индикатор
+            document.getElementById("microphone-indicator").style.display = "none";
+          });
+      }
+
+      // Функция для проверки доступности местоположения
+      function checkLocation() {
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            // Доступ к местоположению предоставлен, отображаем индикатор
+            document.getElementById("location-indicator").style.display = "block";
+          },
+          function (error) {
+            // Доступ к местоположению не предоставлен, скрываем индикатор
+            document.getElementById("location-indicator").style.display = "none";
+          }
+        );
+      }
+
+      // Проверяем доступность устройств каждые 3 секунды
+      setInterval(function () {
+        checkCamera();
+        checkMicrophone();
+        checkLocation();
+      }, 3000);
+    </script> -->
         <script>
             var now = new Date();
             var month = now.getMonth() + 1; // получаем номер текущего месяца (от 0 до 11)
@@ -454,23 +1797,28 @@ footer {
                 document.body.style.backgroundImage = "url('./images/Winter.webp')";
             }
         </script>
+
+
     </body>
     <header>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <h1>Hello</h1>
-        <a button href="" target="_blank" class="app">
-          <span>app</span>
+        
+        <a button onclick="openExplorer()" target="_blank" class="desktop_app_explorer">
+          <img src="./images/explorer.png" width="60" height="60" alt="button 1">
+          <span>Проводник</span>
+        </a>
+        <a button onclick="openCmd()" target="_blank" class="desktop_app_cmd">
+          <img src="./images/cmd.png" width="60" height="60" alt="button 1">
+          <span>CMD</span>
+        </a>
+        <a button onclick="openSetting()" target="_blank" class="desktop_app_battary">
+          <div id="container">
+          <div id="battery-level"><span id="battery-level-value">неизвестно</span></div>
+          <div id="separator"></div>
+          <div id="current-time"><span></span></div>
+          <!-- <img src="./images/run.webp" width="60px" height="60px" alt="1"> -->
+          </div>
         </a>
         
-
-
     </header>
 
     <div id="start">
@@ -483,6 +1831,10 @@ footer {
         <img src="./images/setting.png" width="40" height="40" alt="button 1">
         <span></span>
       </a>
+      <a button onclick="openCamera()" target="_blank" class="start_button_camera">
+        <img src="./images/camera.png" width="40" height="40" alt="button 1">
+        <span></span>
+      </a>
       <a button id="dropdown" target="_blank" class="start_button_panel_off">
         <span></span>
       </a>
@@ -491,7 +1843,11 @@ footer {
         <span>Завершение работы</span>
       </a>
     </div>
-      
+      <div id="dropdown-content">
+        <a button onclick="window.location.href='./boot.html'" target="_blank" class="start_button_reboot">
+        <span>Перезагруска</span>
+      </a>
+    </div>
       
     </div>
     <script>
@@ -514,12 +1870,32 @@ footer {
         <span>Закрыть</span>
       </a>
       <h1>Проводник</h1>
-      <a button onclick="window.location.href='#'" target="_blank" class="explorer_button_desk">
-        <span>Компьютер</span>
+      <a button onclick="window.location.href='#'" target="_blank" class="explorer_button_search">
+        <span>Поиск</span>
       </a>
-      <p>MY</p> 
+      <a button onclick="window.location.href='#'" target="_blank" class="explorer_button_downloads">
+        <span>Загруски</span>
+      </a>
+      <a button onclick="window.location.href='#'" target="_blank" class="explorer_button_images">
+        <span>Изображения</span>
+      </a>
+      <a button onclick="window.location.href='#'" target="_blank" class="explorer_button_video">
+        <span>Видео</span>
+      </a>
+      <a button onclick="window.location.href='#'" target="_blank" class="explorer_button_audio">
+        <span>Аудио</span>
+      </a>
+      <a button onclick="window.location.href='#'" target="_blank" class="explorer_button_documents">
+        <span>Документы</span>
+      </a>
+      <a button onclick="window.location.href='#'" target="_blank" class="explorer_button_desk_1">
+        <span>Хранилище</span>
+      </a>
+      <a button onclick="window.location.href='#'" target="_blank" class="explorer_button_desk_2">
+        <span>SD-карта</span>
+      </a>
     </div>
-    <script>
+    <script id="explorer">
       function openExplorer() {
         var explorer = document.getElementById("explorer");
         explorer.style.display = "block";
@@ -544,7 +1920,7 @@ footer {
       <div id="terminal"></div>
       <input id="input" type="text" autofocus />
     </div>
-    <script>
+    <script id="cmd">
       function openCmd() {
         var cmd = document.getElementById("cmd");
         cmd.style.display = "block";
@@ -578,6 +1954,177 @@ footer {
         });
       </script>
 
+<div id="setting">
+      <a button onclick="closeSetting(closePerfomenc())" target="_blank" class="setting_button">
+        <span>Закрыть</span>
+      </a>
+      <h1>Параметры системы</h1>
+      <a button id="fullscreen-toggle" target="_blank">
+        <span>Полноэкранный режим выключин</span>
+      </a>
+      
+      <a button onclick="openPerfomenc()" target="_blank" class="setting_button_perfomenc">
+        <span>Персанализация</span>
+      </a>
+      <a button id="reset-button" onclick="localStorage.removeItem('visited'); window.location.href='./index.html'" target="_blank" class="setting_button_del">
+        <span>Удалить систему</span>
+      </a>
+      <p></p> 
+    </div>
+    <script id="setting">
+      function openSetting() {
+        var setting = document.getElementById("setting");
+        setting.style.display = "block";
+      }
+      function closeSetting() {
+        var setting= document.getElementById("setting");
+        setting.style.animation = "fadeOut 1s forwards";
+        setTimeout(function() {
+          setting.style.display = "none";
+          setting.style.animation = "fadeIn 1s forwards";
+        }, 1000);
+      }
+      </script>
+      <div id="perfomenc">
+      <a button onclick="closePerfomenc()" target="_blank" class="perfomenc_button">
+        <span>Закрыть</span>
+      </a>
+      <h1>Проводник</h1>
+      <a button onclick="changeBackground('./images/Spring.webp')" target="_blank" class="perfomenc_button_1">
+        <img src="./images/Spring.webp" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/Summer.webp')" target="_blank" class="perfomenc_button_2">
+        <img src="./images/Summer.webp" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/Winter.webp')" target="_blank" class="perfomenc_button_3">
+        <img src="./images/Winter.webp" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/Autumn.webp')" target="_blank" class="perfomenc_button_4">
+        <img src="./images/Autumn.webp" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button id="reset-button" target="_blank" class="perfomenc_button_5">
+        <span>Сбросить изображение</span>
+      </a>
+      <a button onclick="changeBackground('./images/Dark_Forest.jpg')"  target="_blank" class="perfomenc_button_6">
+        <img src="./images/Dark_Forest.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/Forest_sunset.jpg')" target="_blank" class="perfomenc_button_7">
+        <img src="./images/Forest_sunset.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/structure.jpg')" target="_blank" class="perfomenc_button_8">
+        <img src="./images/structure.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/Dagen.jpg')" target="_blank" class="perfomenc_button_9">
+        <img src="./images/Dagen.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <!-- --------------------------------------------------------------------- -->
+      <!-- <a button onclick="changeBackground('./images/Forest_sunset.jpg')" target="_blank" class="perfomenc_button_10">
+        <img src="./images/Forest_sunset.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a> -->
+      <a button onclick="changeBackground('./images/Forest_lake.jpg')" target="_blank" class="perfomenc_button_11">
+        <img src="./images/Forest_lake.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/lake.jpg')" target="_blank" class="perfomenc_button_12">
+        <img src="./images/lake.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/Mountain_sunset.jpg')" target="_blank" class="perfomenc_button_13">
+        <img src="./images/Mountain_sunset.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/Mountains.jpg')" target="_blank" class="perfomenc_button_14">
+        <img src="./images/Mountains.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/waterfall.jpg')" target="_blank" class="perfomenc_button_15">
+        <img src="./images/waterfall.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/Forest_sunset.jpg')" target="_blank" class="perfomenc_button_16">
+        <img src="./images/Forest_sunset.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/Forest_sunset.jpg')" target="_blank" class="perfomenc_button_17">
+        <img src="./images/Forest_sunset.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <a button onclick="changeBackground('./images/Forest_sunset.jpg')" target="_blank" class="perfomenc_button_18">
+        <img src="./images/Forest_sunset.jpg" width="100" height="70" alt="1">
+        <span></span>
+      </a>
+      <input type="file" id="file-input" accept="image/*">
+      <!-- <label for="file-input" id="upload-label">Выберите изображение для фона сайта</label> -->
+    </div>
+    <script id="perfomenc">
+      function openPerfomenc() {
+        var perfomenc = document.getElementById("perfomenc");
+        perfomenc.style.display = "block";
+      }
+      function closePerfomenc() {
+        var perfomenc = document.getElementById("perfomenc");
+        perfomenc.style.animation = "fadeOut 1s forwards";
+        setTimeout(function() {
+          perfomenc.style.display = "none";
+          perfomenc.style.animation = "fadeIn 1s forwards";
+        }, 1000);
+      }
+      </script>
+
+      <div id="microsoft">
+        <a button onclick="closeMicrosoft()" target="_blank" class="microsoft_button">
+          <span>Закрыть</span>
+        </a>
+        <h1>Проводник</h1>
+        <iframe src="" width="996" height="463"></iframe>
+      </div>
+      <script id="microsoft">
+        function openMicrosoft() {
+          var microsoft = document.getElementById("microsoft");
+          microsoft.style.display = "block";
+        }
+        function closeMicrosoft() {
+          var microsoft = document.getElementById("microsoft");
+          microsoft.style.animation = "fadeOut 1s forwards";
+          setTimeout(function() {
+            microsoft.style.display = "none";
+            microsoft.style.animation = "fadeIn 1s forwards";
+          }, 1000);
+        }
+        </script>
+
+        <div id="camera">
+        <a button onclick="closeCamera()" target="_blank" class="camera">
+          <span>Закрыть</span>
+        </a>
+        <h1>Проводник</h1>
+        <video id="camera-view" autoplay></video>
+    <button id="capture-button">Сделать снимок</button>
+      </div>
+      <script id="camera">
+        function openCamera() {
+          var camera = document.getElementById("camera");
+          camera.style.display = "block";
+        }
+        function closeCamera() {
+          var camera = document.getElementById("camera");
+          camera.style.animation = "fadeOut 1s forwards";
+          setTimeout(function() {
+            camera.style.display = "none";
+            camera.style.animation = "fadeIn 1s forwards";
+          }, 1000);
+        }
+        </script>
+
     <footer>
         <div id="taskbar">
         <a button onclick="openStart()" target="_blank" class="s1">
@@ -592,10 +2139,359 @@ footer {
             <img src="./images/cmd.png" width="31" height="31" alt="Button 3">
             <span></span>
         </a>
+          <a button onclick="openMicrosoft()" target="_blank" class="s1">
+            <img src="./images/microsoft.png" width="31" height="31" alt="Button 3">
+            <span></span>
+        </a>
+        
         </div>
-        <script>
- 
-</script>
-        </script>
+
+
+
     </footer>
+
+    <script>
+    //   // Получаем элементы страницы
+    //   var cameraView = document.getElementById("camera-view");
+    //   var captureButton = document.getElementById("capture-button");
+
+    //   // Запрашиваем доступ к камере
+    //   navigator.mediaDevices
+    //     .getUserMedia({ video: true })
+    //     .then(function (stream) {
+    //       // Доступ к камере предоставлен, отображаем видео с камеры
+    //       cameraView.srcObject = stream;
+    //     })
+    //     .catch(function (error) {
+    //       // Доступ к камере не предоставлен
+    //       console.log("Ошибка при получении доступа к камере:", error);
+    //     });
+
+    //   // Обрабатываем нажатие на кнопку "Сделать снимок"
+    //   captureButton.addEventListener("click", function () {
+    //     // Создаем элемент canvas для рисования снимка
+    //     var canvas = document.createElement("canvas");
+    //     canvas.width = cameraView.videoWidth;
+    //     canvas.height = cameraView.videoHeight;
+
+    //     // Рисуем текущий кадр с камеры на canvas
+    //     var context = canvas.getContext("2d");
+    //     context.drawImage(cameraView, 0, 0, canvas.width, canvas.height);
+
+    //     // Получаем данные снимка в формате base64
+    //     var imageData = canvas.toDataURL("image/png");
+
+    //     // Отправляем данные снимка пользователю
+    //     // ...
+    //   });
+    // </script>
+
+    <script>
+      const currentTime = document.querySelector('#current-time');
+
+      function updateTime() {
+          const now = new Date();
+          const timeString = now.toLocaleTimeString();
+          currentTime.textContent = timeString;
+      }
+
+      updateTime();
+      setInterval(updateTime, 1000);
+  </script>
+    <script>
+      const batteryLevelValue = document.querySelector('#battery-level-value');
+
+      if ('getBattery' in navigator) {
+          navigator.getBattery().then((battery) => {
+              updateBatteryLevel(battery);
+              battery.addEventListener('levelchange', () => {
+                  updateBatteryLevel(battery);
+              });
+          });
+      } else {
+          batteryLevelValue.textContent = 'недоступно';
+      }
+
+      function updateBatteryLevel(battery) {
+          const level = Math.round(battery.level * 100);
+          batteryLevelValue.textContent = `${level}%`;
+          if (level >= 100) {
+              batteryLevelValue.style.color = 'rgb(0, 255, 76)';
+          } else if (level >= 85) {
+              batteryLevelValue.style.color = 'rgb(0, 255, 76)';
+          } else if (level >= 70) {
+              batteryLevelValue.style.color = 'lightgreen';
+          } else if (level >= 50) {
+              batteryLevelValue.style.color = 'yellow';
+          } else if (level >= 30) {
+              batteryLevelValue.style.color = 'orange';
+          } else if (level >= 20) {
+              batteryLevelValue.style.color = 'darkorange';
+          } else if (level >= 10) {
+              batteryLevelValue.style.color = 'red';
+          }
+      }
+  </script>
+    <script>
+      const fullscreenToggle = document.querySelector('#fullscreen-toggle');
+      let isFullscreen = false;
+
+      fullscreenToggle.addEventListener('click', () => {
+          if (!isFullscreen) {
+              openFullscreen();
+          } else {
+              closeFullscreen();
+          }
+      });
+
+      function openFullscreen() {
+          if (document.documentElement.requestFullscreen) {
+              document.documentElement.requestFullscreen();
+          } else if (document.documentElement.mozRequestFullScreen) { /* Firefox */
+              document.documentElement.mozRequestFullScreen();
+          } else if (document.documentElement.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+              document.documentElement.webkitRequestFullscreen();
+          } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+              document.documentElement.msRequestFullscreen();
+          }
+          fullscreenToggle.textContent = 'Полноэкранный режим включин';
+          fullscreenToggle.style.backgroundColor = '#4CAF50';
+          isFullscreen = true;
+      }
+
+      function closeFullscreen() {
+          if (document.exitFullscreen) {
+              document.exitFullscreen();
+          } else if (document.mozCancelFullScreen) { /* Firefox */
+              document.mozCancelFullScreen();
+          } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+              document.webkitExitFullscreen();
+          } else if (document.msExitFullscreen) { /* IE/Edge */
+              document.msExitFullscreen();
+          }
+          fullscreenToggle.textContent = 'Полноэкранный режим выключин';
+          fullscreenToggle.style.backgroundColor = '#f44336';
+          isFullscreen = false;
+      }
+  </script>
+    
+    <script>
+              const fileInput = document.querySelector('#file-input');
+        const uploadLabel = document.querySelector('#upload-label');
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                localStorage.setItem('backgroundImage', event.target.result);
+                setBackgroundImage(event.target.result);
+            };
+            reader.readAsDataURL(file);
+        });
+
+        function setBackgroundImage(imageData) {
+            document.body.style.backgroundImage = `url(${imageData})`;
+            document.body.style.backgroundSize = 'cover';
+            uploadLabel.style.display = 'none';
+        }
+
+        const savedImage = localStorage.getItem('backgroundImage');
+        if (savedImage) {
+            setBackgroundImage(savedImage);
+        }
+      </script>
+      <script>
+        const resetButton = document.querySelector('#reset-button');
+        resetButton.addEventListener('click', () => {
+            localStorage.removeItem('backgroundImage');
+            document.body.style.backgroundImage = '';
+            imagesContainer.style.display = 'block';
+        });
+      </script>
+    <script>
+      function changeBackground(image) {
+  document.body.style.backgroundImage = "url('" + image + "')";
+      }
+      </script>
+
+        <script>
+//Перемещение DIV
+dragElement(document.getElementById("explorer"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // если присутствует заголовок - перемещение за заголовок
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // иначе - перемещение за любую часть элемента
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // получить позицию курсора мыши при старте:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // вызов функции при перемещении курсора
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // вычислить новую позицию курсора
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // установить новую позицию элемента:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // остановить перемещение при отпускании кнопки мыши:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+<script>
+  //Перемещение DIV
+  dragElement(document.getElementById("a"));
+  
+  function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+      // если присутствует заголовок - перемещение за заголовок
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+      // иначе - перемещение за любую часть элемента
+      elmnt.onmousedown = dragMouseDown;
+    }
+  
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // получить позицию курсора мыши при старте:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // вызов функции при перемещении курсора
+      document.onmousemove = elementDrag;
+    }
+  
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // вычислить новую позицию курсора
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // установить новую позицию элемента:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+  
+    function closeDragElement() {
+      // остановить перемещение при отпускании кнопки мыши:
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+  </script>
+<script>
+//Перемещение DIV
+dragElement(document.getElementById("cmd"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // если присутствует заголовок - перемещение за заголовок
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // иначе - перемещение за любую часть элемента
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // получить позицию курсора мыши при старте:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // вызов функции при перемещении курсора
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // вычислить новую позицию курсора
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // установить новую позицию элемента:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // остановить перемещение при отпускании кнопки мыши:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+</script>
+<script>
+  //Перемещение DIV
+  dragElement(document.getElementById("microsoft"));
+  
+  function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+      // если присутствует заголовок - перемещение за заголовок
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+      // иначе - перемещение за любую часть элемента
+      elmnt.onmousedown = dragMouseDown;
+    }
+  
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // получить позицию курсора мыши при старте:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // вызов функции при перемещении курсора
+      document.onmousemove = elementDrag;
+    }
+  
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // вычислить новую позицию курсора
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // установить новую позицию элемента:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+  
+    function closeDragElement() {
+      // остановить перемещение при отпускании кнопки мыши:
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+  </script>
+
 </html>
