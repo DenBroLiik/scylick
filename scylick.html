@@ -20,19 +20,75 @@
   
   
   <!DOCTYPE html>
-  
-  
-  <html>
-  <head>
+
    
     <title></title>
-    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./icon/SL.png" type="image/x-icon">
    <html lang="ru"></html>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <body>
   <script>
 
   </script>
+    <head>
+      <style>
+        #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255,255,255,0.741);
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        #qrCode {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            border-radius: 15px; /* Закругление углов */
+            width: 46%; /* Уменьшение размера на 10% */
+        }
+    </style>
+  </head>
+  <body>
+      <div id="overlay" onclick="off()">
+          <img id="qrCode" src="./icon/QR.png" alt="QR Code">
+      </div>
+  
+      <script>
+          var keySequence = [];
+          var correctSequence = ['s', 'l']; // Замените на вашу последовательность
+  
+          window.addEventListener('keydown', function(event) {
+              keySequence.push(event.key);
+              if (keySequence.length > correctSequence.length) {
+                  keySequence.shift();
+              }
+              if (JSON.stringify(keySequence) === JSON.stringify(correctSequence)) {
+                  on();
+              }
+          });
+  
+          function on() {
+              document.getElementById("overlay").style.display = "block";
+          }
+  
+          function off() {
+              document.getElementById("overlay").style.display = "none";
+          }
+      </script>
+  </body>
+    
+    <html>
+    <head>
   </body>
    
    <style>
@@ -304,35 +360,11 @@
     </div>
    </nav>
    <main>
-      <h1 class="center" id="value"></h1>
-      <h1 id="value"></h1>
-      <h1 class="center">Видео обзор программы SLLauncher&copy;</h1>
-      <head class="center">
-         </body>
-         <div id="player"></div>
-         <script class="center" src="https://www.youtube.com/iframe_api"></script>
-        <script>
-        var player;
-        function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-        height: '315',
-        width: '560',
-        videoId: 'B4_-uKZuPTE',
-        events: {
-          'onReady': onPlayerReady,
-          'onStateChange': onPlayerStateChange
-         }
-        });
-      }
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
-      function onPlayerStateChange(event) {
-      // действия при изменении состояния плеера
-      }
-      </script>
-         </html>
-    <p> </p>
+    <div style="display: flex; justify-content: center;">
+      <iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="660" height="375" src="https://www.youtube.com/embed/-HfDXNSmJxA?enablejsapi=1&origin=https%3A%2F%2Fdenbroliik.github.io&widgetid=1" style="border-radius: 10px;"></iframe>
+  </div>
+  
+      
    </main>
    <footer>
     
@@ -342,4 +374,3 @@
    </footer>
   </body>
   </html>
-  
