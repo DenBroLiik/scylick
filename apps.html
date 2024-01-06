@@ -5,7 +5,7 @@
 <head>
   
  <title>ScyLick.ru</title>
- <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
+ <link rel="shortcut icon" href="./icon/SL.png" type="image/x-icon">
  <html lang="ru"></html>
     <meta charset="UTF-8">
  <style>
@@ -325,6 +325,93 @@
         color: #1b1b1b;
       }
 
+      #menu1 {
+        border: 3px solid #ff0000;
+        border-radius: 5px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1000px;
+        height: 500px;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .menu1_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      }
+      .menu1_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .menu1_button_install {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #009b00;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #009b00;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 40%;
+        right: 20%;
+        font-size: 26px;
+        line-height: 10px;
+        left: 500px;
+      }
+      .menu1_button_install:hover {
+        transform: scale(1.05);
+			  border-color: #009b00;
+        font-family: "Arial Black", sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      #menu1 h1 {
+        line-height: 6px;
+        text-indent: 50%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      #menu1 p {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+
       #loading-bar {
         position: fixed;
         top: 0;
@@ -340,6 +427,12 @@
         from { opacity: 1; }
         to { opacity: 0; }
       }
+      #menu1, #menu2 , #menu3, #menu4, #menu5, #menu6, #menu7, #menu7, #menu8, #menu9, #menu10, #menu11, #menu12{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
 
 
  </style>
@@ -405,84 +498,93 @@
  <main>
     <img src="./images/title-apps.png" class="center">
     <div class="container">
-		<a href="https://www.mediafire.com/file/2d2woo5lw1mixfp/SL.zip/file" target="_blank" class="button">
-			<img src="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" alt="Button 1">
-			<span>SLLauncher</span>
-		</a>
-		<a button onclick="showMessage()" onclick="window.location.href='#'" target="_blank" class="button">
-			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 2">
-			<span>Нет товара</span>
-		</a>
-		<a button onclick="openMenu()" onclick="window.location.href='#'" target="_blank" class="button">
-			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 3">
-			<span>Нет товара</span>
-		</a>
+      <a button onclick="openMenu1()" target="_blank" class="button" style="border-radius: 10px;">
+        <img src="./icon/SL.png" alt="Button 1">
+        <span>SLLauncher</span>
+    </a>
+      
+      <a button onclick="showMessage()" onclick="window.location.href='#'" target="_blank" class="button">
+        <img src="https://via.placeholder.com/100x100?text=Нет" alt="Button 2">
+        <span>Нет товара</span>
+      </a>
+      <a button onclick="showMessage()" target="_blank" class="button" style="border-radius: 10px;">
+        <img src="https://via.placeholder.com/100x100?text=Нет" alt="Button 3">
+        <span>Нет товара</span>
+      </a>
 		<a href="#" target="_blank" class="button">
-			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 4">
+			<img src="https://via.placeholder.com/100x100?text=Нет" alt="Button 4">
 			<span>Нет товара</span>
 		</a>
 		<a href="https://discord.com/api/oauth2/authorize?client_id=1120212773251596318&permissions=8&scope=bot%20applications.commands" target="_blank" class="button">
-			<img src="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" alt="Button 5">
+			<img src="./icon/SL.png" alt="Button 5">
 			<span>Scylickbot</span>
 		</a>
 		<a href="#" target="_blank" class="button">
-			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 6">
+			<img src="https://via.placeholder.com/100x100?text=Нет" alt="Button 6">
 			<span>Нет товара</span>
 		</a>
 		<a href="#" target="_blank" class="button">
-			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 7">
+			<img src="https://via.placeholder.com/100x100?text=Нет" alt="Button 7">
 			<span>Нет товара</span>
 		</a>
 		<a href="#" target="_blank" class="button">
-			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 8">
+			<img src="https://via.placeholder.com/100x100?text=Нет" alt="Button 8">
 			<span>Нет товара</span>
 		</a>
 		<a href="#" target="_blank" class="button">
-			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 9">
+			<img src="https://via.placeholder.com/100x100?text=Нет" alt="Button 9">
 			<span>Нет товара</span>
 		</a>
 		<a href="#" target="_blank" class="button">
-			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 10">
+			<img src="https://via.placeholder.com/100x100?text=Нет" alt="Button 10">
 			<span>Нет товара</span>
 		</a>
 		<a href="#" target="_blank" class="button">
-			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 11">
+			<img src="https://via.placeholder.com/100x100?text=Нет" alt="Button 11">
 			<span>Нет товара</span>
 		</a>
 		<a href="#" target="_blank" class="button">
-			<img src="https://via.placeholder.com/100x100?text=Нет%20товара" alt="Button 12">
+			<img src="https://via.placeholder.com/100x100?text=Нет" alt="Button 12">
 			<span>Нет товара</span>
 		</a>
 	</div>
-  <div id="menu">
-    <a button onclick="closeMenu()" target="_blank" class="menu_button">
-      <span>Закрыть</span>
-    </a>
-    <h1>TETLE</h1>
-    <p>Hello</p>
-    <a button onclick="window.location.href='#'" target="_blank" class="menu_button_install">
-      <span>Скачать</span>
-    </a>
-    <p>MY</p> 
-    <!-- <button onclick="closeMenu()" >Закрыть</button> -->
-  </div>
-  <script>
-    function openMenu() {
-      var menu = document.getElementById("menu");
-      menu.style.display = "block";
-    }
-    function closeMenu() {
-      var menu = document.getElementById("menu");
-      menu.style.animation = "fadeOut 1s forwards";
-      setTimeout(function() {
-        menu.style.display = "none";
-        menu.style.animation = "fadeIn 1s forwards";
-      }, 1000);
-    }
-  </script>
+  <div id="menu1" style="display: none; width: 1000px; height: 500px; background-color: rgba(255, 255, 255, 0.5); border: 3px solid red; padding: 5px;">
+    <button onclick="closeMenu1()" style="float: right; border-radius: 10px;">Закрыть</button>
+    <button onclick="window.location.href='https://www.mediafire.com/file/2d2woo5lw1mixfp/SL.zip/file'" style="float: right; margin: 2px; cursor: pointer; transition: all 0.3s ease-in-out; border: 3px solid #009b00; border-radius: 10px; padding: 10px; font-family: Arial Black, sans-serif; color: #000000; background-color: #009b00; text-decoration: none; max-width: calc(100% - 140px); top: 100px; right: 20%; font-size: 26px; line-height: 10px; left: 500px;">Скачать</button>
+    <iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="660" height="375" src="https://www.youtube.com/embed/-HfDXNSmJxA?enablejsapi=1&origin=https%3A%2F%2Fdenbroliik.github.io&widgetid=1" style="border-radius: 10px;"></iframe>
+    <p style="margin-left: 20px;">Текст</p>
+</div>
+</div>
+
+<script>
+function openMenu1() {
+document.getElementById('menu1').style.display = 'block';
+}
+
+function closeMenu1() {
+document.getElementById('menu1').style.display = 'none';
+}
+</script>
+<div id="menu2" style="display: none; width: 1000px; height: 500px; background-color: rgba(255, 255, 255, 0.5); border: 3px solid red; padding: 5px;">
+  <button onclick="closeMenu2()" style="float: right; border-radius: 10px;">Закрыть</button>
+  <button onclick="window.location.href='https://www.mediafire.com/file/2d2woo5lw1mixfp/SL.zip/file'" style="float: right; margin: 2px; cursor: pointer; transition: all 0.3s ease-in-out; border: 3px solid #009b00; border-radius: 10px; padding: 10px; font-family: Arial Black, sans-serif; color: #000000; background-color: #009b00; text-decoration: none; max-width: calc(100% - 140px); top: 100px; right: 20%; font-size: 26px; line-height: 10px; left: 500px;">Скачать</button>
+  <iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="660" height="375" src="https://www.youtube.com/embed/-HfDXNSmJxA?enablejsapi=1&origin=https%3A%2F%2Fdenbroliik.github.io&widgetid=1" style="border-radius: 10px;"></iframe>
+  <p style="margin-left: 20px;">Текстv</p>
+</div>
+</div>
+
+<script>
+function openMenu2() {
+document.getElementById('menu2').style.display = 'block';
+}
+
+function closeMenu2() {
+document.getElementById('menu2').style.display = 'none';
+}
+</script>
   <div id="message">
     <h1>Внимание</h1>
-    <p>У вас нет прав чтобы скачать это приложение.</p>
+    <p>Нет нечего.</p>
   </div>
   <script>
       function showMessage() {

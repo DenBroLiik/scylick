@@ -3,7 +3,7 @@
 <head>
   
  <title>ScyLick.ru</title>
-  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./icon/SL.png" type="image/x-icon">
  <html lang="ru"></html>
   <meta charset="UTF-8">
  <style>
@@ -152,11 +152,12 @@
 
 
     .text {
-    color: #ff0000a8;
-    font-family: Consolas, Menlo, Monaco, monospace;
-    font-weight: bold;
-    font-size: 24px;
-    opacity: 0.8;
+      color: #ff0000a8;
+      font-family: Consolas, Menlo, Monaco, monospace;
+      font-weight: bold;
+      font-size: 24px;
+      opacity: 0.8;
+      text-align: center;
   }
   .text:before {
     content: "{";
@@ -181,17 +182,42 @@
   border: 2px solid red;
   border-radius: 10px;
   padding: 10px;
+  
   }
-  .text1 {
-    color: #ff0000;
-    font-family: "Arial Black", sans-serif;
 
-  }
-  .text2 {
-    
-    color: #00ff00;
+  .text3 {
+    color: #ffae00;
     font-family: "Arial Black", sans-serif;
+    margin-bottom: 10px;
   }
+
+  .text1 {
+    color: #ffbb00;
+    font-family: "Arial Black", sans-serif;
+    margin-bottom: 1px;
+  }
+
+  .text4 {
+    color: #85d800;
+    font-family: "Arial Black", sans-serif;
+    margin-bottom: 6px;
+    text-align: center;
+  }
+
+  .text2 {
+    color: #00f000;
+    font-family: "Arial Black", sans-serif;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+  .text5 {
+    color: #ef3838;
+    font-family: "Arial Black", sans-serif;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
    
   #loading-bar {
         position: fixed;
@@ -200,6 +226,7 @@
         width: 100%;
         height: 2px;
         background-color: red;
+        color: #00d192;
       }
       .fade-out {
         animation: fadeOut 1s forwards;
@@ -219,23 +246,43 @@
       loadingBar.style.display = "none";
     });
     </script>
-  <script>
-		var now = new Date();
-		var month = now.getMonth() + 1; // получаем номер текущего месяца (от 0 до 11)
 
-		if (month >= 3 && month <= 5) {
-			// весна (март, апрель, май)
-			document.body.style.backgroundImage = "url('./images/Spring.webp')";
-		} else if (month >= 6 && month <= 8) {
-			// лето (июнь, июль, август)
-			document.body.style.backgroundImage = "url('./images/Summer.webp')";
-		} else if (month >= 9 && month <= 11) {
-			// осень (сентябрь, октябрь, ноябрь)
-			document.body.style.backgroundImage = "url('./images/Autumn.webp')";
-		} else {
-			// зима (декабрь, январь, февраль)
-			document.body.style.backgroundImage = "url('./images/Winter.webp')";
-		}
+<style>
+  body {
+      background: linear-gradient(-45deg, rgb(0, 124, 128), rgb(0, 255, 106), rgb(0, 174, 255));
+      background-size: 600% 600%;
+      animation: Gradient 2s ease infinite;
+  }
+  
+  @keyframes Gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+  }
+  </style>
+<script>
+  var now = new Date();
+  var month = now.getMonth() + 1; // получаем номер текущего месяца (от 0 до 11)
+
+  if (month >= 3 && month <= 5) {
+      // весна (март, апрель, май)
+      document.body.style.animation = "Gradient 6s ease infinite";
+      document.body.style.background = "linear-gradient(-45deg, rgb(0, 124, 128), rgb(0, 255, 106), rgb(0, 174, 255))";
+  } else if (month >= 6 && month <= 8) {
+      // лето (июнь, июль, август)
+      document.body.style.animation = "Gradient 6s ease infinite";
+      document.body.style.background = "linear-gradient(-45deg, rgb(0, 124, 128), rgb(0, 255, 106), rgb(0, 174, 255))";
+  } else if (month >= 9 && month <= 11) {
+      // осень (сентябрь, октябрь, ноябрь)
+      document.body.style.animation = "Gradient 6s ease infinite";
+      document.body.style.background = "linear-gradient(-45deg, rgb(0, 124, 128), rgb(0, 255, 106), rgb(0, 174, 255))";
+  } else {
+      // зима (декабрь, январь, февраль)
+      document.body.style.animation = "Gradient 6s ease infinite";
+      document.body.style.background = "linear-gradient(-45deg, rgb(0, 124, 128), rgb(0, 255, 106), rgb(0, 174, 255))";
+  }
+</script>
+    
 </script>
  <header>
 
@@ -264,58 +311,48 @@
   </div>
  </nav>
  <main>
+ <h1><span class="text">Нажмите F3 чтобы открыть поиск</span></h1>
+ <h1 class="text2">Информатия</h1>
 
-  
+ <h3 class="text4">Обновление сайта scylick</h4>
+ <h4 class="text3">Вышло 1.1.2024</h4>
+ <iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="460" height="260" src="https://www.youtube.com/embed/нет?enablejsapi=1&origin=https%3A%2F%2Fdenbroliik.github.io&widgetid=1" style="border-radius: 10px;"></iframe>
+ <h4 class="text1">Интерфейс: полностью переработан стал более функциональние и простым</h4>
+ <h4 class="text1">Функции: при нажатии клавишь "s" "l" откроется посхалка на какойто из страниц!</h4>
+ <h4 class="text1">OS: добавленыновые функции</h4>
 
-  </body>
-<p><span class="text">Нажмите F3 чтобы открыть поиск</span></p>
-<p class="text2">| Информатия сайта</p>
-<p class="text2">| Будующие возможности сайта</p>
-<p class="text2">| 1. Добавлять свои приложения</p>
-<p class="text2">| 2. Создать свой хостинг</p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p> </p>
-<p></p>
-<p></p>
-<p></p>
-<p class="text2">| SLLauncher</p>
-<p class="text2">| Уже доступен!</p>
-<p class="text2">| Скачать SLLauncher</p>
-<p class="text2">| Как что делать ниже</p>
-<h2 class="text1">Как скачать?</h2>
-<p class="text2">| 1. Скачайте программу</p>
-<p class="text2">| 2. Распакуйте архив на только диск C на рабочий стол</p>
-<p class="text2">| 3. Заходим в папку и запускаем SLinstaller</p>
-<p class="text2">| 4. В открывшемся окне пишем Да</p>
-<p class="text2">| 5. Ожидайте пару секунд пока не напишет запустить программу</p>
-<p class="text2">| 6. Запускаете программу</p>
-<h2 class="text1">Информация</h2>
-<p class="text2">| 1. Добавлена программа.</p>
-<p class="text2">| 2. Тестирование программы.</p>
-<p class="text2">| 3. При обновлении программа предуридит</p>
-<p class="text2">| 4. Режим разрабочика</p>
-<p class="text2">| 5. Бесплатный майнкрафт</p>
-<h2 class="text1">Рекомендуемые технические характиристики</h2>
-<p class="text2">| Процессор i3-2377M ядер 4 частота ~1.0-1.5 Hz</p>
-<p class="text2">| Память 4 GB</p>
-<p class="text2">| Windows 10-11 x64-bit</p>
-<p class="text2">| Диск SSD-HDD-MicroSD 2,00+ GB</p>
-<h2 class="text1">Разрабочики</h2>
-<p class="text2">| @DenBroLiik</p>
-<h2 class="text1">Тестировщики</h2>
-<p class="text2">| @DenBroLiiik</p>
-<p class="text2">| @liik230</p>
-<h2 class="text1">Языки</h2>
-<p class="text2">| java-63%</p>
-<p class="text2">| PhP-12%</p>
-<p class="text2">| Shell-22%</p>
-<p class="text2">| Другие-3%</p>
-<h2 class="text1">Ссылки</h2>
-<p class="text2">| YouTube</p>
-<p class="text2">| версия 1.19.80 следующая 1.20.0</p>
-<p class="text2">| Discord</p>
+ <h3 class="text4">Copilot-AI+</h3>
+ <h4 class="text3">Дата выхода 10.2.2024</h4>
+ <iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="460" height="260" src="https://www.youtube.com/embed/nu5qiELD8cY?enablejsapi=1&origin=https%3A%2F%2Fdenbroliik.github.io&widgetid=1" style="border-radius: 10px;"></iframe>
+ <h4 class="text5">Релиз - полноценная версия программы некоторые функции могу быть не доступны или их не будет но добавится в другом релизе доступна всем.
+Пре-релиз - доступны функции которые могут не быть в релизе есть риск что программа будет вылетать и работать не корректно доступна всем.
+Версия тестировщика - доступны все функции работа с искусственным интеллектом доступна тестировщикам.</h4>
+ <h4 class="text1">Copilot-AI+ - это многофункциональный инструмент, который обеспечивает широкий спектр услуг для улучшения вашего цифрового опыта. Вот некоторые из его ключевых функций:</h4>
+ <h4 class="text1">Взаимодействие с системой: Copilot-AI+ способен взаимодействовать с вашей операционной системой, выполняя различные задачи и автоматизируя процессы.</h4>
+ <h4 class="text1">Чат-бот: Copilot-AI+ включает в себя чат-бота, который может обсуждать множество тем, обеспечивая интерактивный и увлекательный опыт общения.</h4>
+ <h4 class="text1">Конвертер: Copilot-AI+ может преобразовывать различные типы данных и форматы, обеспечивая гибкость и удобство использования.</h4>
+ <h4 class="text1">Улучшение изображений: С помощью Copilot-AI+ вы можете улучшить качество своих изображений, увеличивая их четкость и яркость.</h4>
+ <h4 class="text1">Измерение скорости интернета: Copilot-AI+ может измерять скорость вашего интернет-соединения, помогая вам оптимизировать свою сетевую производительность.</h4>
+ <h4 class="text1">Создание собственных тем: Copilot-AI+ предлагает возможность создавать собственные темы, позволяя вам настроить свой интерфейс в соответствии с вашими предпочтениями.</h4>
+ <h4 class="text1">Copilot-AI+ - это ваш надежный цифровой помощник, который обеспечивает эффективность, удобство и инновации. Он был разработан с учетом ваших потребностей, чтобы обеспечить вам лучший цифровой опыт.</h4>
+
+ <h3 class="text4">Обновление сайта scylick</h4>
+ <h4 class="text3">Вышло 2.9.2023</h4>
+ <iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="460" height="260" src="https://www.youtube.com/embed/-HfDXNSmJxA?enablejsapi=1&origin=https%3A%2F%2Fdenbroliik.github.io&widgetid=1" style="border-radius: 10px;"></iframe>
+ <h4 class="text1">Интерфейс: стал более удобние</h4>
+ <h4 class="text1">OS: дбавлено пару вещей</h4>
+
+ <h3 class="text4">SLlauncher</h3>
+ <h4 class="text3">Вышел 14.5.2023</h4>
+ <iframe id="player" frameborder="0" allowfullscreen="" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="460" height="260" src="https://www.youtube.com/embed/B4_-uKZuPTE?enablejsapi=1&origin=https%3A%2F%2Fdenbroliik.github.io&widgetid=1" style="border-radius: 10px;"></iframe>
+ <h4 class="text1">Лаунчер майнкрафт</h4>
+ <h4 class="text1">| 1. Добавлена программа.</h4>
+ <h4 class="text1">| 2. Тестирование программы.</h4>
+ <h4 class="text1">| 3. При обновлении программа предупридит</h4>
+ <h4 class="text1">| 4. Режим разрабочика</h4>
+ <h4 class="text1">| 5. Бесплатный майнкрафт</h4>
+ <h4 class="text1">Версия 0.0.1</h4>
+
  </main>
  <footer>
   <h1><span class="footer"><img src="./images/title-sl.png" width="16" height="16">Сайт ScyLick&copy; 2024</span></h1>

@@ -2,17 +2,32 @@
 <html>
 <head>
 	<title>Ошибка 503</title>
+	<link rel="shortcut icon" href="./icon/SL.png" type="image/x-icon">
 	<meta charset="utf-8">
 	<style>
 
 footer {
+   position: fixed; /* Фиксируем футер внизу страницы */
+   bottom: 0; /* Указываем, что футер должен быть прижат к нижней границе */
+   width: 100%; /* Футер должен занимать всю ширину страницы */
    background-color: #00b7ffb2;
    color: #00b7ff;
    padding: 5px;
    text-align: center;
-  }
+   border: 2px solid #ff0000;
+   border-radius: 10px;
+}
+
+
 .container {
   text-align: center;
+}
+
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .images {
@@ -28,13 +43,34 @@ footer {
   margin: 10px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.5s ease-in-out;
 }
 
-.images img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
+.images img:nth-child(1) {
+  animation: scaleUpDown 6s infinite ease-in-out 0s;
 }
+
+.images img:nth-child(2) {
+  animation: scaleUpDown 6s infinite ease-in-out 2s;
+}
+
+.images img:nth-child(3) {
+  animation: scaleUpDown 6s infinite ease-in-out 4s;
+}
+
+
+@keyframes scaleUpDown {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
 
 h1 {
 font-family: 'Helvetica', sans-serif;  
@@ -77,6 +113,52 @@ color: #ff0000;
   }
 }
 
+/* Стили для мобильных устройств */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Стили для планшетов */
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+/* Стили для маленьких десктопов */
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+/* Стили для больших десктопов */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+.text1 {
+  text-align: center;
+}
+
+.text2 {
+    text-align: center;
+    position: absolute;
+    bottom: 240px; /* Вы можете изменить это значение в зависимости от высоты вашего футера */
+    width: 22%;
+}
+
 
 	</style>
     <script>
@@ -97,20 +179,18 @@ h1.addEventListener('click', () => {
     </script>
 </head>
 <body>
-	<h1>Ошибка 503: Сервис недоступен</h1>
+	<h1 class="text1">Ошибка 503: Сервис недоступен</h1>
 	<h1>Пожалуйста, попробуйте зайти на сайт позже.</h1>
 </body>
-<h1>Ошибка возникла зависания сервера или</h1>
+<h1>Ошибка возникла из за зависания сервера или</h1>
 <h1>серевер выключин по техническим причинам</h1>
-
-
-
-<p>Мы стараемся как можно быстрее решить проблему</p>
+<img sec="Null">
+<h4 class="text2">Мы стараемся как можно быстрее решить проблему!</h4>
 <footer>
 <div class="images">
-    <img src="/scylick/images/wan.webp" alt="Изображение 1">
-    <img src="image2.jpg" alt="Изображение 2">
-    <img src="image3.jpg" alt="Изображение 3">
+    <img src="./images/cloud-servers.png" alt="Server 1">
+    <img src="./images/settings-server.png" alt="Server 2">
+    <img src="./images/servers.png" alt="Server 3">
 </div>
 </footer>
 </html>

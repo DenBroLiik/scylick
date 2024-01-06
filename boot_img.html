@@ -1,0 +1,127 @@
+<script>
+
+    let tabCount = 0;
+    
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Tab') {
+        event.preventDefault();
+        tabCount++;
+        if (tabCount === 3) {
+          window.location.href = './flashboot.html';
+        }
+      } else {
+        tabCount = 0;
+      }
+    });
+    
+      </script>
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <title>DEV</>os</title>
+            <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
+        <html lang="ru"></html>
+        <meta charset="UTF-8">
+    
+    <script>
+    if (localStorage.getItem('visited')) {
+    
+      alert('Нажмите F11 для полного погружения!');
+      
+        // пользователь уже был на сайте, не перебрасываем
+    } else {
+        // пользователь не был на сайте, перебрасываем на другой сайт через 3 секунды
+    
+        setTimeout(function() {
+            window.location.href = './fastboot_img.html';
+        }, 1200);
+    }
+    
+    </script>
+    
+        </head>
+        <style>
+    
+        footer {
+            position: fixed;
+            display: flex;
+      justify-content: center;
+      align-items: center;
+        top: 75%;
+        left: 50%;
+        background-color: rgb(10, 10, 10);
+        }
+        .loader {
+        width: 48px;
+        height: 48px;
+        border: 7px solid #ffffff;
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1.5s linear infinite;
+        
+        }
+    
+        @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        25% {
+            /* border-color: white; */
+            border: 7px solid #d400ff;
+            transform: rotate(25deg);
+        }
+        50% {
+            transform: rotate(100deg);
+        }
+        75% {
+            /* border-color: red; */
+            border: 7px solid #ff0000;
+            transform: rotate(175deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+        }
+        img {
+        display: block;
+        margin: 0 auto;
+        
+    }
+        body {
+        
+    
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 35%;
+        left: 45.8%;
+        background-color: rgb(10, 10, 10);
+        }
+        </style>
+        <body>
+            <img src="./images/title-sl.png" width="180" height="180" alt="Your Image">
+        </body>
+        <footer>
+            <span class="loader"></span>
+        </footer>
+        <audio id="myAudio">
+            <source src="./audio/audio.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает элемент audio.
+          </audio>
+          
+          <script>
+            setTimeout(function() {
+              let audio = document.getElementById("myAudio");
+              audio.play();
+            }, 3500);
+          </script>
+        <script>
+            setTimeout(function() {
+      window.location.href = "os.html";
+    }, 4000);
+        </script>
+        
+    </html>

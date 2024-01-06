@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DEV</>os</title>
+    <link rel="shortcut icon" href="./icon/SL.png" type="image/x-icon">
+    <html lang="ru"></html>
+    <meta charset="UTF-8">
+<style>
+    body {
+        background-color: rgb(14, 14, 14);
+        margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    }
+    .container {
+    position: relative;
+    /* ... */
+    animation: zoomIn 0.9s ease-in-out;
+    
+    width: 1100px;
+    height: 600px;
+    border: 2px solid white;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.356);
+    backdrop-filter: blur(5px);
+    }
+    .button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+  }
+  @keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+  .button {
+    top: 50%;
+    left: 50%;
+    
+    padding: 10px 400px;
+    display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 5px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 2px solid #ff0000af;
+			border-radius: 5px;
+			font-family: "Arial Black", sans-serif;
+            color: #ff0000;
+            background-color: #f2f2f267;
+            text-decoration: none;
+            max-width: calc(100% - 140px);
+  }
+  .button:hover {
+			transform: scale(1.01);
+			border-color: #ff000038;
+		}
+        #setting {
+        border: 3px solid #ff0000;
+        border-radius: 20px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* width: 100%;
+        height: 100%; */
+        width: 1100px;
+        height: 600px;
+        /* background-color: rgb(255, 255, 255); */
+        background-image: url('./images/Dark_Forest.jpg');
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .setting_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 20px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 0, 0, 0.205);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      }
+      .setting_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .setting_button_perfomenc {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #ffffff;
+			  border-radius: 6px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #ff0000;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 10%;
+        left: 1%;
+        /* right: 54%; */
+        font-size: 26px;
+        line-height: 10px;
+      }
+      .setting_button_perfomenc:hover {
+        transform: scale(1.05);
+			  border-color: #000000;
+        font-family: "Arial Black", sans-serif;
+      }
+      .setting_button_del {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #ffffff;
+			  border-radius: 6px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #ff0000;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 15%;
+        left: 1%;
+        /* right: 54%; */
+        font-size: 26px;
+        line-height: 10px;
+      }
+      .setting_button_del:hover {
+        transform: scale(1.05);
+			  border-color: #000000;
+        font-family: "Arial Black", sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      #setting h1 {
+        border: #ff0000;
+        border-radius: 20px;
+        line-height: -300px;
+        text-indent: 120%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #000000;
+      }
+      #setting p {
+        text-indent: 1%;
+        line-height: 5px;
+        font-size: 16px;
+        font-family: "Arial Black", sans-serif;
+        color: #1b1b1b;
+      }
+      .progress-bar {
+  position: relative;
+  width: 330px;
+  height: 20px;
+  overflow: hidden;
+  border: white;
+  border-radius: 20px;
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(238, 238, 238);
+  animation: progress 10s linear infinite;
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+    footer {
+        position: fixed;
+        display: flex;
+  justify-content: center;
+  /* align-items: center; */
+    top: 75%;
+    left: 10%;
+    background-color: rgba(255, 255, 255, 0);
+    }
+
+   .text {
+        color: #008cff;
+        height: 70px;
+        
+    }
+    .text2 {
+        color: #00ff6a;
+        
+    }
+   
+</style>
+</head>
+<body>
+    <h3 class="text">FASTBOOT</h3>
+  </div>
+</div>
+<div id="setting">
+    <!-- <a button onclick="closeSetting()" target="_blank" class="setting_button">
+      <span>Закрыть</span>
+    </a> -->
+    <footer>
+        
+
+      
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+      
+        
+    </footer>
+  </div>
+  <script id="setting">
+    function openSetting() {
+      var setting = document.getElementById("setting");
+      setting.style.display = "block";
+      
+      setTimeout(function() { window.location.href = "boot_img.html"; }, 16090);
+      
+    }
+    function closeSetting() {
+      var setting= document.getElementById("setting");
+      setting.style.animation = "fadeOut 1s forwards";
+      setTimeout(function() {
+        setting.style.display = "none";
+        setting.style.animation = "fadeIn 1s forwards";
+      }, 1000);
+      
+    }
+    const progressBar = document.querySelector('.progress-bar');
+
+setInterval(() => {
+  const stripe = document.createElement('div');
+  stripe.classList.add('stripe');
+  stripe.style.width = '4px';
+  stripe.style.height = '20px';
+  stripe.style.backgroundColor = 'rgba(255,255,255,0.5)';
+  stripe.style.position = 'absolute';
+  stripe.style.top = '0';
+  stripe.style.left = '0';
+  
+  progressBar.appendChild(stripe);
+  
+  let progress = 0;
+  
+  const animateStripe = setInterval(() => {
+    progress += 1;
+    stripe.style.left = `${progress}%`;
+    
+    if (progress >= 100) {
+      clearInterval(animateStripe);
+      progressBar.removeChild(stripe);
+    }
+    
+  },10);
+  
+},1000);
+setTimeout(() => {
+  localStorage.setItem('visited', true);
+},9800);
+
+    </script>
+</body>
+</html>

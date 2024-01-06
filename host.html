@@ -2,7 +2,7 @@
 <html>
 <head>
  <title>ScyLick.ru</title>
-  <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./icon/SL.png" type="image/x-icon">
  <html lang="ru"></html>
     <meta charset="UTF-8">
  <style>
@@ -195,32 +195,72 @@
 
 
 .button-container {
-    text-align: left;
-    flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-    width: 250px;
+  display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			max-width: 800px;
+			margin: 0 auto;
 }
 .button2 {
-  display: block;  
-  margin-bottom: 10px;
-  
-	margin: 5px;
-	cursor: pointer;
-	transition: all 0.3s ease-in-out;
-	border: 2px solid #ff0000af;
-	border-radius: 5px;
-	padding: 10px;
-	font-family: "Arial Black", sans-serif;
-    color: #ff0000;
-    background-color: #f2f2f267;
-    text-decoration: none;
-    max-width: calc(100% - 140px);
-}
-.button2:hover {
-			transform: scale(1.05);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 20px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 2px solid #ff0000af;
+			border-radius: 5px;
+			padding: 10px;
+			font-family: "Arial Black", sans-serif;
+            color: #ff0000;
+            background-color: #f2f2f267;
+            text-decoration: none;
+            max-width: calc(100% - 140px);
+		}
+		.button2:hover {
+			transform: scale(1.07);
 			border-color: #ff000038;
-		} 
+		}
+		.button2 img {
+			width: 600px;
+			height: 300px;
+			margin-bottom: 10px;
+		}
+
+    /* Стили для мобильных устройств */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+/* Стили для планшетов */
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+/* Стили для маленьких десктопов */
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+/* Стили для больших десктопов */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
 
 
  </style>
@@ -274,9 +314,10 @@
   </body>
   <div class="button-container">
     <a button onclick="window.location.href='./boot.html'" target="_blank" class="button2">
-        <span>Хостинг</span>
+      <img src="./images/OS_image.jpg" alt="Button 3">
+      <!-- <span></span> -->
     </a>
-    <a button onclick="window.location.href='./index.html'" target="_blank" class="button2">
+    <!-- <a button onclick="window.location.href='./index.html'" target="_blank" class="button2">
         <span>Магазин</span>
     </a>
     <a button onclick="window.location.href='./index.html'" target="_blank" class="button2">
@@ -284,7 +325,7 @@
     </a>
     <a button onclick="window.location.href='./index.html'" target="_blank" class="button2">
         <span>Панель управления</span>  
-    </a> 
+    </a>  -->
 
 
  </main>

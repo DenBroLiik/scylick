@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <script>
+    window.onload = function() {
+    var savedSiteContent = localStorage.getItem("savedSiteContent");
+    var userVisited = localStorage.getItem("userVisited");
+    if (savedSiteContent && userVisited) {
+        document.open();
+        document.write(savedSiteContent);
+    } else {
+        localStorage.setItem("userVisited", true);
+    }
+}
+
+  </script>
+<head>
+    <title>fastboot</title>
+    <link rel="shortcut icon" href="./icon/SL.png" type="image/x-icon">
+    <html lang="ru"></html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #101010;
+            position: relative;
+        }
+        #contentWrapper {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        #siteContainer {
+            border: 2px solid deepskyblue;
+            padding: 20px;
+            position: relative;
+            border-radius: 15px;
+            background-color: #242424;
+        }
+        #siteFileInput {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: calc(100% - 20px);
+            opacity: 0;
+        }
+        #uploadButton, #selectFileButton {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: #4CAF50;
+            color: #f1f1f1;
+            border: none;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            font: roboto;
+            cursor: pointer;
+        }
+        .text-1 {
+          font: roboto;
+          color: #f1f1f1;
+        }
+        footer {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            padding: 6px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: roboto;
+        }
+        .footerText {
+            font-size: 14px;
+            color: #f1f1f1;
+            font: roboto;
+            margin-right: 10px;
+        }
+        #footerContent {
+            font: roboto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #footerImage {
+          width: 30px;
+          height: 30px;
+          margin-right: 10px;
+        }
+         /* Медиа-запросы для адаптации под разные устройства */
+         @media only screen and (max-width: 600px) {
+            #uploadButton, #selectFileButton {
+                font-size: 12px;
+                padding: 8px 16px;
+            }
+            .text-1 {
+                font-size: 14px;
+            }
+            #siteContainer {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="contentWrapper">
+        <h2 class="text-1">Загрузите образ системы</h2>
+        <div id="siteContainer">
+            <input type="file" id="siteFileInput" accept=".html">
+            <button id="selectFileButton" onclick="document.getElementById('siteFileInput').click()">Выбрать файл</button>
+            <button id="uploadButton" onclick="checkAndLoadSite()">Загрузить образ системы</button>
+            <p id="fileStatus"></p>
+        </div>
+    </div>
+
+    <script>
+        function checkAndLoadSite() {
+            var fileInput = document.getElementById('siteFileInput');
+            var file = fileInput.files[0];
+            if (!file) {
+                document.getElementById('fileStatus').innerText = "Файл не выбран";
+            } else if (file.type !== "text/html") {
+                document.getElementById('fileStatus').innerText = "Неверный формат файла (ожидается .html)";
+            } else {
+                var reader = new FileReader();
+                reader.onload = function() {
+                    var siteContent = reader.result;
+                    if (siteContent.includes('<!DOCTYPE html') || siteContent.includes('<html')) {
+                        localStorage.setItem("savedSiteContent", siteContent);
+                        location.reload();
+                    } else {
+                        document.getElementById('fileStatus').innerText = "Файл не содержит HTML-содержимого";
+                    }
+                };
+                reader.readAsText(file);
+            }
+        }
+
+        window.onload = function() {
+            var savedSiteContent = localStorage.getItem("savedSiteContent");
+            if (savedSiteContent) {
+                document.open();
+                document.write(savedSiteContent);
+                document.close();
+            }
+        };
+    </script>
+
+<footer>
+    <div id="footerContent">
+        <img src="./icon/SL.png" id="footerImage" alt="SL">
+        <h4 class="footerText">FastBoot</h4>
+    </div>
+</footer>
+</body>
+</html>

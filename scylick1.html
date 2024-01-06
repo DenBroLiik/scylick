@@ -46,6 +46,7 @@
   }
   main {
    margin: 20px;
+   color: #7700ff;
   }
   footer {
    background-color: #ff0000;
@@ -83,7 +84,9 @@
  <span class="glow"></span>
   <div>
   <span>
-    <li><a href="/registration.html">Авторизатия</a></li>
+    <a onclick="deleteSiteFile()">
+      <span>Авторизатия</span>
+    </a>
   </span>
   </div>
   </div>
@@ -107,5 +110,24 @@
  <footer>
   <p>Сайт &copy; 2023 ScyLick</p>
  </footer>
+ <script>
+        function deleteUploadedFile() {
+         // Получаем ссылку на input элемент, загруженный файл которого нужно удалить
+         var fileInput = document.getElementById('fileInput');
+
+         // Сбрасываем значение input элемента,
+         // что приведет к удалению загруженного файла
+         fileInput.value = '';
+      }
+ </script>
+ <button id="resetButton" onclick="resetSite()">Сбросить сайт</button>
+
+ <script>
+ function resetSite() {
+     localStorage.removeItem("savedSiteContent");
+     location.reload();
+ }
+ </script>
+ 
 </body>
 </html>

@@ -21,10 +21,11 @@ if (localStorage.getItem('visited')) {
 <html>
     <head>
     <title>ScyLick.ru</title>
-    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1012001107511345192/1110636087669424178/2023-05-23_205008589.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./icon/SL.png" type="image/x-icon">
     <html lang="ru"></html>
     <meta charset="UTF-8">
 <style>
+
 
     /* footer {
         background-color: #ffffff5e;
@@ -144,16 +145,16 @@ footer {
 
     #start {
         border: 3px solid #ff0000;
-        border-radius: 10px;
+        border-radius: 20px;
         position: fixed;
-        top: 63%;
+        top: 65%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 595px;
         height: 600px;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(27, 27, 27, 0.5);
         display: none;
-        animation: fadeIn 1s forwards;
+        animation: fadeIn 0.5s forwards;
       }
       .start_button {
       display: flex;
@@ -207,7 +208,7 @@ footer {
 			  cursor: pointer;
 			  transition: all 0.3s ease-in-out;
 			  border: 3px solid #252925;
-			  border-radius: 10px;
+			  border-radius: 20px;
 			  padding: 10px;
 			  font-family: 'Roboto', sans-serif;
         color: #c2c2c2;
@@ -235,7 +236,7 @@ footer {
 			  cursor: pointer;
 			  transition: all 0.3s ease-in-out;
 			  border: 3px solid #252925;
-			  border-radius: 10px;
+			  border-radius: 20px;
 			  padding: 10px;
 			  font-family: 'Roboto', sans-serif;
         color: #c2c2c2;
@@ -698,7 +699,7 @@ footer {
         transform: translate(-50%, -50%);
         width: 100%;
         height: 95%;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: rgba(0, 0, 0, 0.5);
         display: none;
         animation: fadeIn 1s forwards;
       }
@@ -714,7 +715,7 @@ footer {
 			padding: 6px;
 			font-family: "Arial Black", sans-serif;
       color: #ff0000;
-      background-color: rgba(255, 255, 255, 0.5);
+      background-color: rgba(15, 15, 15, 0.692);
       text-decoration: none;
       max-width: calc(100% - 50px);
       position: absolute;
@@ -725,6 +726,33 @@ footer {
        transform: scale(1.05);
 			 border-color: #ff0000ef;
        font-family: "Arial Black", sans-serif;
+      }
+      .setting_button_perfomenc_1 {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #ffffff;
+			  border-radius: 6px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #dfdfdf;
+        background-color: #2b2b2b;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 10%;
+        left: 1%;
+        /* right: 54%; */
+        font-size: 26px;
+        line-height: 10px;
+      }
+      .setting_button_perfomenc_1:hover {
+        transform: scale(1.05);
+			  border-color: #000000;
+        font-family: "Arial Black", sans-serif;
       }
       .setting_button_perfomenc {
         display: flex;
@@ -737,12 +765,12 @@ footer {
 			  border-radius: 6px;
 			  padding: 10px;
 			  font-family: "Arial Black", sans-serif;
-        color: #000000;
-        background-color: #ff0000;
+        color: #ececec;
+        background-color: #2b2b2b;
         text-decoration: none;
         max-width: calc(100% - 140px);
         position: absolute;
-        top: 10%;
+        top: 15%;
         left: 1%;
         /* right: 54%; */
         font-size: 26px;
@@ -764,12 +792,12 @@ footer {
 			  border-radius: 6px;
 			  padding: 10px;
 			  font-family: "Arial Black", sans-serif;
-        color: #000000;
-        background-color: #ff0000;
+        color: #d8d8d8;
+        background-color: #2b2b2b;
         text-decoration: none;
         max-width: calc(100% - 140px);
         position: absolute;
-        top: 15%;
+        top: 20%;
         left: 1%;
         /* right: 54%; */
         font-size: 26px;
@@ -1064,6 +1092,121 @@ footer {
         font-family: "Arial Black", sans-serif;
         color: #1b1b1b;
       }
+      #owner {
+        border: 3px solid #ff0000;
+        border-radius: 5px;
+        position: fixed;
+        top: 47%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 95%;
+        background-color: rgba(14, 14, 14, 0.897);
+        display: none;
+        animation: fadeIn 1s forwards;
+      }
+      .owner_button {
+      display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: -2px;
+			cursor: pointer;
+			transition: all 0.3s ease-in-out;
+			border: 3px solid #ff0000af;
+			border-radius: 4px;
+			padding: 6px;
+			font-family: "Arial Black", sans-serif;
+      color: #ff0000;
+      background-color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      max-width: calc(100% - 50px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      }
+      .owner_button:hover {
+       transform: scale(1.05);
+			 border-color: #ff0000ef;
+       font-family: "Arial Black", sans-serif;
+      }
+      .owner_button_1 {
+        display: flex;
+			  flex-direction: column;
+			  align-items: center;
+			  margin: 2px;
+			  cursor: pointer;
+			  transition: all 0.3s ease-in-out;
+			  border: 3px solid #009b00;
+			  border-radius: 10px;
+			  padding: 10px;
+			  font-family: "Arial Black", sans-serif;
+        color: #000000;
+        background-color: #009b00;
+        text-decoration: none;
+        max-width: calc(100% - 140px);
+        position: absolute;
+        top: 40%;
+        right: 20%;
+        font-size: 26px;
+        line-height: 10px;
+        left: 500px;
+      }
+      .owner_button_1:hover {
+        transform: scale(1.05);
+			  border-color: #009b00;
+        font-family: "Arial Black", sans-serif;
+      }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes fadeOut {
+        from { opacity: 1; }
+        to { opacity: 0; }
+      }
+      
+      #owner h1 {
+        line-height: 6px;
+        text-indent: 50%;
+        font-size: 22px;
+        font-family: "Arial Black", sans-serif;
+        color: #ff0000;
+      }
+      /* .owner a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-family: 'Roboto', sans-serif;
+        } */
+        #owner p {
+            
+            color: rgb(226, 226, 226);
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            font-family: 'Roboto', sans-serif;
+        }
+        #owner h3 {
+            
+            color: rgb(226, 226, 226);
+            padding: 4px 12px;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            font-family: 'Roboto', sans-serif;
+        }
+        #owner h5 {
+          color: rgb(226, 226, 226);
+          padding: 2px 10px;
+          text-decoration: none;
+          font-size: 20px;
+          /* display: block; */
+          font-family: 'Roboto', sans-serif;
+          vertical-align: bottom;
+        }
+    
+
       #perfomenc {
         border: 3px solid #ff0000;
         border-radius: 5px;
@@ -1602,17 +1745,20 @@ footer {
       right: 35%;
       }
       body {
-        background-size: 2560px 1440px;
+        width: 50%;
+        /* background-size: 2560px 1440px; */
         /* background-size: 4096px 2160px; */
-        background-image: url('./images/Spring.webp');
+        /* background-image: url('./images/Spring.webp');
         background-image: url('./images/Summer.webp');
         background-image: url('./images/Winter.webp');
-        background-image: url('./images/Spring.webp');
+        background-image: url('./images/Spring.webp'); */
+        background-image: url('./images/backgroud_image.jpg');
         background-image: url('.jpg');
         background-image: url('.png');
         background-image: url('.webp');
         
         background-color: #000000;
+        background-image: url('./images/background_image.jpg');
       }
       #fullscreen-toggle {
             position: fixed;
@@ -1653,9 +1799,9 @@ footer {
         font-family: "Arial Black", sans-serif;
       }
       #separator {
-            width: 1px;
-            height: 80%;
-            margin: 0 20px;
+            width: 3px;
+            height: 20px;
+            margin: 1px 15px;
             background-color: blueviolet;
             
         }
@@ -1721,8 +1867,102 @@ footer {
 			  border-color: blueviolet;
         font-family: "Arial Black", sans-serif;
       }
-      
+      .button_menu {
+    padding: 12px 200px;
+    background-color: #4CAF50;
+    color: white;
+    border: 1px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .dropdown_menu {
+    /* position: fixed; */
+    top: 200px;
+    /* left: -100px; Изменить значение на нужное */
+    /* width: 100px; */
+    /* height: 100px; */
+  }
+
+  .dropdown-content_menu {
+    top: 62px;
+    display: none;
+    position: absolute;
+    position: fixed;
+    right: 11.5%; 
+    border: 2px;
+    border-radius: 10px;
+    background-color: #b700ff42;
+    min-width: 360px;
+    box-shadow: 0px 8px 16px 0px #8d0081;
+    z-index: 1;
+    font-family: 'Roboto', sans-serif;
+    transform-origin: top;
+    animation: slide-down 0.5s ease-in;
+  }
+
+  @keyframes slide-down {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+    }
+  }
+
+  .dropdown-content_menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .dropdown-content_menu p {
+    color: rgb(228, 228, 228);
+    padding: 0px 20px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .dropdown-content_menu h3 {
+    color: rgb(255, 255, 255);
+    padding: 2px 20px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .dropdown-content_menu h5 {
+    color: rgb(255, 255, 255);
+    padding: 0px 20px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+  }
+  .dropdown-content_menu h4 {
+    color: rgb(255, 255, 255);
+    padding: 0px 20px;
+    text-decoration: none;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+  }
+  /* #storage-info {
+  text-align: center;
+  margin-top: 50px;
+}
+#memory-info {
+  text-align: center;
+  margin-top: 50px;
+} */
 </style>
+
     </head>
     <!-- <body>
       <div id="camera-indicator" class="indicator"></div>
@@ -1779,7 +2019,7 @@ footer {
         checkLocation();
       }, 3000);
     </script> -->
-        <script>
+        <!-- <script>
             var now = new Date();
             var month = now.getMonth() + 1; // получаем номер текущего месяца (от 0 до 11)
     
@@ -1796,7 +2036,7 @@ footer {
                 // зима (декабрь, январь, февраль)
                 document.body.style.backgroundImage = "url('./images/Winter.webp')";
             }
-        </script>
+        </script> -->
 
 
     </body>
@@ -1810,15 +2050,145 @@ footer {
           <img src="./images/cmd.png" width="60" height="60" alt="button 1">
           <span>CMD</span>
         </a>
-        <a button onclick="openSetting()" target="_blank" class="desktop_app_battary">
+        <a button="" id="draggable-button" onclick="openMonitor_menu()" target="_blank" class="desktop_app_battary">
           <div id="container">
-          <div id="battery-level"><span id="battery-level-value">неизвестно</span></div>
-          <div id="separator"></div>
-          <div id="current-time"><span></span></div>
-          <!-- <img src="./images/run.webp" width="60px" height="60px" alt="1"> -->
+            <div id="battery-level"><span id="battery-level-value">неизвестно</span></div>
+            <div id="separator"></div>
+            <div id="current-time"><span></span></div>
           </div>
         </a>
         
+        <!-- <div class="dropdown_menu"> -->
+          <!-- <button class="button_menu">Нажми меня ></button> -->
+        
+          <div class="dropdown-content_menu">
+            <h3>Ресурсы системы</h3>
+            <div id="storage-info">
+              <h4>Информация хранилища</h4>
+              <p id="total-storage"></p>
+              <p id="used-storage"></p>
+            </div>
+            <div id="memory-info">
+              <h4>Информация памяти</h4>
+              <p id="total-memory"></p>
+              <p id="used-memory"></p>
+            </div>
+            <div id="battery-info">
+              <h4>Информация о батарее</h4>
+              <p id="battery-levels"></p>
+              <p id="battery-charging"></p>
+            </div>
+            
+          </div>
+        </div>
+        <script>
+    
+
+
+          window.addEventListener('DOMContentLoaded', function() {
+  if ('storage' in navigator && 'estimate' in navigator.storage) {
+    setInterval(updateStorageInfo, 1000); // Обновление каждую секунду
+  } else {
+    document.getElementById('storage-info').textContent = 'Информация о хранилище недоступна';
+  }
+});
+
+function updateStorageInfo() {
+  navigator.storage.estimate().then(function(storageInfo) {
+    var total = storageInfo.quota / (1024 * 1024 * 1024); // в GB
+    var used = storageInfo.usage / (1024 * 1024 * 1024); // в GB
+
+    document.getElementById('total-storage').textContent = 'Хранилища: ' + total.toFixed(2) + 'GB';
+    document.getElementById('used-storage').textContent = 'Использовано хранилища: ' + used.toFixed(2) + 'GB';
+  });
+}
+
+       
+        window.addEventListener('DOMContentLoaded', function() {
+  setInterval(updateMemoryInfo, 1000); // Обновление каждую секунду
+});
+
+function updateMemoryInfo() {
+  var totalMemory = window.navigator.deviceMemory;
+  var usedMemory = (performance.memory.usedJSHeapSize / (1024 * 1024)).toFixed(2);
+
+  document.getElementById('total-memory').textContent = 'Памяти: ' + totalMemory + 'GB';
+  document.getElementById('used-memory').textContent = 'Использовано памяти: ' + usedMemory + 'MB';
+}
+
+
+window.addEventListener('DOMContentLoaded', function() {
+  setInterval(updateBatteryInfo, 1000); // Обновление каждую секунду
+});
+
+function updateBatteryInfo() {
+  navigator.getBattery().then(function(battery) {
+    var chargeLevel = battery.level * 100;
+    var chargingTime = battery.chargingTime !== Infinity ? secondsToHMS(battery.chargingTime) : 'Неизвестно';
+    var dischargingTime = battery.dischargingTime !== Infinity ? secondsToHMS(battery.dischargingTime) : 'Неизвестно';
+
+    document.getElementById('battery-levels').textContent = 'Уровень заряда батареи: ' + chargeLevel + '%';
+
+    if (battery.charging) {
+      document.getElementById('battery-charging').textContent = 'Время до полной зарядки: ' + chargingTime;
+    } else {
+      document.getElementById('battery-charging').textContent = 'Время до разрядки: ' + dischargingTime;
+    }
+  });
+}
+
+function secondsToHMS(d) {
+  d = Number(d);
+  var h = Math.floor(d / 3600);
+  var m = Math.floor(d % 3600 / 60);
+  var s = Math.floor(d % 3600 % 60);
+
+  return ((h > 0 ? h + ":" : "") + (m > 0 ? (h > 0 && m < 10 ? "0" : "") + m + ":" : "0:") + (s < 10 ? "0" : "") + s);
+}
+
+        </script>
+
+        <script>
+          window.onscroll = function() {
+    var footer = document.querySelector('footer');
+    var footerRect = footer.getBoundingClientRect();
+    if (footerRect.top < window.innerHeight + 5) {
+        openStart();
+    }
+};
+
+        </script>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var dropdownButton_menu = document.querySelector('.desktop_app_battary');
+            var dropdownContent_menu = document.querySelector('.dropdown-content_menu');
+        
+            dropdownButton_menu.addEventListener('click', function() {
+              if (dropdownContent_menu.style.display === 'none' || dropdownContent_menu.style.display === '') {
+                dropdownContent_menu.style.display = 'block';
+              } else {
+                dropdownContent_menu.style.display = 'none';
+                
+              }
+            });
+          });
+        
+          function openMonitor_menu() {
+            var Monitor_menu = document.getElementById("Monitor_menu");
+            Monitor_menu.style.display = "block";
+            dropdownContent_menu.style.transform = 'translateX(0)';
+          }
+        
+          function closeMonitor_menu() {
+            var Monitor_menu = document.getElementById("Monitor_menu");
+            Monitor_menu.style.animation = "fadeOut 1s forwards";
+            setTimeout(function() {
+              Monitor_menu.style.display = "none";
+              Monitor_menu.style.animation = "fadeIn 1s forwards";
+            }, 1000);
+          }
+        </script>
     </header>
 
     <div id="start">
@@ -1962,7 +2332,9 @@ footer {
       <a button id="fullscreen-toggle" target="_blank">
         <span>Полноэкранный режим выключин</span>
       </a>
-      
+      <a button onclick="openOwner()" target="_blank" class="setting_button_perfomenc_1">
+        <span>Информация устройства</span>
+      </a>
       <a button onclick="openPerfomenc()" target="_blank" class="setting_button_perfomenc">
         <span>Персанализация</span>
       </a>
@@ -1990,39 +2362,39 @@ footer {
         <span>Закрыть</span>
       </a>
       <h1>Проводник</h1>
-      <a button onclick="changeBackground('./images/Spring.webp')" target="_blank" class="perfomenc_button_1">
-        <img src="./images/Spring.webp" width="100" height="70" alt="1">
+      <a button onclick="changeBackground('./images/Minecraft_29.09.2023_22_59_48.png')" target="_blank" class="perfomenc_button_1">
+        <img src="./images/Minecraft_29.09.2023_22_59_48.png" width="100" height="70" alt="1">
         <span></span>
       </a>
-      <a button onclick="changeBackground('./images/Summer.webp')" target="_blank" class="perfomenc_button_2">
-        <img src="./images/Summer.webp" width="100" height="70" alt="1">
+      <a button onclick="changeBackground('./images/Minecraft_29.09.2023_23_00_50.png')" target="_blank" class="perfomenc_button_2">
+        <img src="./images/Minecraft_29.09.2023_23_00_50.png" width="100" height="70" alt="1">
         <span></span>
       </a>
-      <a button onclick="changeBackground('./images/Winter.webp')" target="_blank" class="perfomenc_button_3">
-        <img src="./images/Winter.webp" width="100" height="70" alt="1">
+      <a button onclick="changeBackground('./images/Minecraft_29.09.2023_23_01_50.png')" target="_blank" class="perfomenc_button_3">
+        <img src="./images/Minecraft_29.09.2023_23_01_50.png" width="100" height="70" alt="1">
         <span></span>
       </a>
-      <a button onclick="changeBackground('./images/Autumn.webp')" target="_blank" class="perfomenc_button_4">
-        <img src="./images/Autumn.webp" width="100" height="70" alt="1">
+      <a button onclick="changeBackground('./images/Minecraft_29.09.2023_23_02_20.png')" target="_blank" class="perfomenc_button_4">
+        <img src="./images/Minecraft_29.09.2023_23_02_20.png" width="100" height="70" alt="1">
         <span></span>
       </a>
       <a button id="reset-button" target="_blank" class="perfomenc_button_5">
         <span>Сбросить изображение</span>
       </a>
-      <a button onclick="changeBackground('./images/Dark_Forest.jpg')"  target="_blank" class="perfomenc_button_6">
-        <img src="./images/Dark_Forest.jpg" width="100" height="70" alt="1">
+      <a button onclick="changeBackground('./images/Minecraft_29.09.2023_23_04_56.png')"  target="_blank" class="perfomenc_button_6">
+        <img src="./images/Minecraft_29.09.2023_23_04_56.png" width="100" height="70" alt="1">
         <span></span>
       </a>
-      <a button onclick="changeBackground('./images/Forest_sunset.jpg')" target="_blank" class="perfomenc_button_7">
-        <img src="./images/Forest_sunset.jpg" width="100" height="70" alt="1">
+      <a button onclick="changeBackground('./images/Minecraft_29.09.2023_23_06_00.png')" target="_blank" class="perfomenc_button_7">
+        <img src="./images/Minecraft_29.09.2023_23_06_00.png" width="100" height="70" alt="1">
         <span></span>
       </a>
-      <a button onclick="changeBackground('./images/structure.jpg')" target="_blank" class="perfomenc_button_8">
-        <img src="./images/structure.jpg" width="100" height="70" alt="1">
+      <a button onclick="changeBackground('./images/Minecraft_29.09.2023_23_16_53.png')" target="_blank" class="perfomenc_button_8">
+        <img src="./images/Minecraft_29.09.2023_23_16_53.png" width="100" height="70" alt="1">
         <span></span>
       </a>
-      <a button onclick="changeBackground('./images/Dagen.jpg')" target="_blank" class="perfomenc_button_9">
-        <img src="./images/Dagen.jpg" width="100" height="70" alt="1">
+      <a button onclick="changeBackground('./images/Minecraft_29.09.2023_23_17_23.png')" target="_blank" class="perfomenc_button_9">
+        <img src="./images/Minecraft_29.09.2023_23_17_23.png" width="100" height="70" alt="1">
         <span></span>
       </a>
       <!-- --------------------------------------------------------------------- -->
@@ -2054,8 +2426,8 @@ footer {
         <img src="./images/Forest_sunset.jpg" width="100" height="70" alt="1">
         <span></span>
       </a>
-      <a button onclick="changeBackground('./images/Forest_sunset.jpg')" target="_blank" class="perfomenc_button_17">
-        <img src="./images/Forest_sunset.jpg" width="100" height="70" alt="1">
+      <a button onclick="changeBackground('./images/Mountain_sunset_2.png')" target="_blank" class="perfomenc_button_17">
+        <img src="./images/Mountain_sunset_2.png" width="100" height="70" alt="1">
         <span></span>
       </a>
       <a button onclick="changeBackground('./images/Forest_sunset.jpg')" target="_blank" class="perfomenc_button_18">
@@ -2079,7 +2451,52 @@ footer {
         }, 1000);
       }
       </script>
+      <div id="owner">
+        <a button onclick="closeOwner()" target="_blank" class="owner_button">
+          <span>Закрыть</span>
+        </a>
+        <h1>Информация устройства</h1>
+        <h3>
+          Список изменений
+        </h3>
+        <h5> 1) Рабочий стол: теперь при нажатии на виджет с часами вместо настороек будет открыватся меню деспечера задач. </h5>
+        <h5> 2) Фон: теперь фоновые обои будут отображатся нормально на разных мониторах. А также в персонализации новые обои! </h5>
+        <h5> 3) Настройки: в настройках появилась новая кнопка "Информация устройства" в ней информация вашего компьютера, ноутбука и телефона. </h5>
+        <h5> 4) Адаптация: система почти адаптирована под все устройства </h5>
+        <h5> 5) Устройства: функции могут отличатся на некоторых устройствах </h5>
+        <h5> 6) Быстродействие: сайт может загрузится за 1 мс и меньше зависимости от устройства и интернета</h5>
 
+
+        <h5> Тесты: Устройство: Xiaomi Redmi 7A pine интернет: роутер flex-80Mbps-2.4ГГц система загрузилась за 3 мс 6,3MB/s | интернет: megafon-?-? система загрузилась за 0,7 мс 15,2MB/s</h5>
+        </div>
+      <script id="owner">
+      function openOwner() {
+        var owner = document.getElementById("owner");
+        owner.style.display = "block";
+      }
+      function closeOwner() {
+        var owner = document.getElementById("owner");
+        owner.style.animation = "fadeOut 1s forwards";
+        setTimeout(function() {
+          owner.style.display = "none";
+          owner.style.animation = "fadeIn 1s forwards";
+        }, 1000);
+      }
+      </script>
+      <!-- <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var dropdownButton = document.querySelector('.button_1');
+            var dropdownContent = document.querySelector('.dropdown-content_2');
+
+            dropdownButton.addEventListener('click', function() {
+                if (dropdownContent.style.display === 'none') {
+                    dropdownContent.style.display = 'block';
+                } else {
+                    dropdownContent.style.display = 'none';
+                }
+            });
+        });
+    </script> -->
       <div id="microsoft">
         <a button onclick="closeMicrosoft()" target="_blank" class="microsoft_button">
           <span>Закрыть</span>
@@ -2314,6 +2731,8 @@ footer {
       </script>
 
         <script>
+
+
 //Перемещение DIV
 dragElement(document.getElementById("explorer"));
 
@@ -2493,5 +2912,82 @@ function dragElement(elmnt) {
     }
   }
   </script>
+  <!-- <script>
+    var button = document.getElementById('draggable-button');
+var drag = false;
+
+button.onmousedown = function(event) {
+    drag = true;
+    button.style.position = 'absolute';
+    button.style.zIndex = 1000;
+    document.body.append(button);
+    moveAt(event.pageX, event.pageY);
+};
+
+button.onmouseup = function() {
+    drag = false;
+};
+
+button.onmousemove = function(event) {
+    if (drag) {
+        moveAt(event.pageX, event.pageY);
+    }
+};
+
+function moveAt(pageX, pageY) {
+    button.style.left = pageX - button.offsetWidth / 2 + 'px';
+    button.style.top = pageY - button.offsetHeight / 2 + 'px';
+}
+
+button.ondragstart = function() {
+    return false;
+};
+
+</script> -->
+  <!-- <script>
+  //Перемещение DIV
+  dragElement(document.getElementById("owner"));
+  
+  function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+      // если присутствует заголовок - перемещение за заголовок
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+      // иначе - перемещение за любую часть элемента
+      elmnt.onmousedown = dragMouseDown;
+    }
+  
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // получить позицию курсора мыши при старте:
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      document.onmouseup = closeDragElement;
+      // вызов функции при перемещении курсора
+      document.onmousemove = elementDrag;
+    }
+  
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // вычислить новую позицию курсора
+      pos1 = pos3 - e.clientX;
+      pos2 = pos4 - e.clientY;
+      pos3 = e.clientX;
+      pos4 = e.clientY;
+      // установить новую позицию элемента:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+  
+    function closeDragElement() {
+      // остановить перемещение при отпускании кнопки мыши:
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+  }
+  </script> -->
 
 </html>
